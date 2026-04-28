@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon" />
+    <link rel="stylesheet" href="school.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>تقييمات</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2>مدرسه السادات بنين</h2>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="nav">
+          <li>
+            <a class="asd aad" href="index.html"
+              >لرجوع لصفحه الرئيسيه </a>
+          </li>
+          <li><a href="#footer">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("nav");
+        hamburger.addEventListener("click", function () {
+          nav.classList.toggle("active");
+          hamburger.classList.toggle("active");
+        });
+        const navLinks = document.querySelectorAll("#nav a");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            nav.classList.remove("active");
+            hamburger.classList.remove("active");
+          });
+        });
+      </script>
+      <br />
+
+      <h1 style="text-align: center">تقييمات انجليزي اولي ثانوي</h1>
+      <hr />
+            <center>
+      
+       <button style="margin-top: 140px;" class="cenb">
+          <b class="font-sv"><a class="aad" href="https://drive.google.com/drive/folders/13hrSevcynBLHwapz6IuPnBGdtqVvK3F0?usp=drive_link">تقييمات</a></b>
+        </button>
+      </center>
+    </main>
+    <footer id="footer">
+      فكره أ/السيد سالم : البرمجه تم التصميم بمحافظه الدقهليه اكادميه
+      <a class="bnv" href="https://www.gcschool.tech/" target="_blank"
+        >gc school</a
+      >بمدرسه السادات الطالب/ادهم محمد ابراهيم الصف الاول الثانوي هديه مجانيه
+      للمدرسه تواصل معنا علي :: <span class="nam"> 01013984024</span>
+      <b class="c">©</b>
+    </footer>
+  </body>
+</html>
