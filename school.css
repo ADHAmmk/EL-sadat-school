@@ -645,3 +645,19 @@ p {
     object-fit: cover;
   }
 }
+
+.v {
+  background: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  height: 30px;
+  width: 100%;
+  max-width: 130px;
+  padding-top:10px;
+  transition: transform 0.3s ease;
+  box-shadow: 3px 4px 15px darkmagenta;
+}
+
+.v { width: 90%;
+  max-width: none;
+  height: 50px;}
