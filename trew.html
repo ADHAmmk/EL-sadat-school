@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مرحباً بكم - مدرسة السادات الثانوية بنين</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark: #0a3d2e;
+      --green-mid: #145a3f;
+      --green-light: #1e7a55;
+      --gold: #c9971c;
+      --gold-light: #f0c040;
+      --cream: #faf8f3;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+      --border: #e0dbd0;
+      --shadow-lg: 0 12px 48px rgba(10,61,46,0.18);
+      --radius: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      direction: rtl;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at top right, rgba(10,61,46,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at bottom left, rgba(201,151,28,0.06) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .top-label {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .top-label .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-dark);
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 22px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 16px rgba(10,61,46,0.25);
+    }
+
+    .welcome-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid rgba(201,151,28,0.35);
+      animation: fadeUp 0.7s ease 0.15s both;
+      position: relative;
+    }
+
+    .welcome-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--green-dark), var(--gold), var(--green-dark));
+      z-index: 2;
+    }
+
+    .welcome-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .card-footer {
+      background: var(--green-dark);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .card-footer .school-name {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-footer .school-name i {
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    .card-footer .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(201,151,28,0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 7px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Cairo', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .card-footer .back-btn:hover {
+      background: rgba(201,151,28,0.35);
+    }
+
+    .deco {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .deco-1 {
+      width: 300px; height: 300px;
+      background: var(--green-dark);
+      top: -80px; left: -80px;
+    }
+
+    .deco-2 {
+      width: 200px; height: 200px;
+      background: var(--gold);
+      bottom: -60px; right: -60px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.5rem 0.75rem; }
+      .card-footer { padding: 0.9rem 1.25rem; }
+      .card-footer .school-name { font-size: 13px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="deco deco-1"></div>
+  <div class="deco deco-2"></div>
+
+  <div class="page-wrapper">
+
+    <div class="top-label">
+      <div class="tag">
+        <i class="fa-solid fa-school"></i>
+        الموقع الرسمي · مدرسة السادات الثانوية بنين
+      </div>
+    </div>
+
+    <div class="welcome-card">
+      <img
+        src="WhatsApp Image 2026-05-23 at 7.19.07 PM.jpeg"
+        alt="مرحباً بكم في الموقع الرسمي لمدرسة السادات الثانوية بالسنبلاوين"
+      >
+      <div class="card-footer">
+        <div class="school-name">
+          <i class="fa-solid fa-graduation-cap"></i>
+          مديرية التربية والتعليم بالدقهلية · إدارة السنبلاوين التعليمية
+        </div>
+        <a class="back-btn" href="index.html">
+          <i class="fa-solid fa-house"></i>
+          الصفحة الرئيسية
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
