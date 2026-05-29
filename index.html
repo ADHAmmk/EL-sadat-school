@@ -856,7 +856,7 @@
         أكاديمية <a href="https://www.gcschool.tech/" target="_blank">GC School</a> · الطالب / <strong style="color:rgba(255,255,255,0.75)">أدهم محمد إبراهيم</strong> — الصف الأول الثانوي<br>
         هدية مجانية لمدرسة السادات
       </p>
-      <a class="footer-phone" href="tel:01013984024">
+      <a class="footer-phone" href="tel:01013984024" onclick="sendWhatsApp9()">
         <i class="fa-solid fa-phone"></i> 01013984024
       </a>
       <p class="footer-copy">© 2026 مدرسة السادات الثانوية بنين — جميع الحقوق محفوظة</p>
@@ -877,6 +877,18 @@
         hamburger.classList.remove('active');
       });
     });
+
+    function sendWhatsApp9() {
+  let phone = "201013984024";
+  
+ 
+
+  let message = `ممكن حضرتك احجز موقع `;
+  
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  
+  window.open(url, "_blank");
+}
 
     // Scroll-in animation
     const observer = new IntersectionObserver((entries) => {
