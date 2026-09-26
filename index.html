@@ -1,907 +1,2722 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="_aU5YYXmU2YvGy8Y7TqDUoqO58o-6gWKZ0hLddtIbnk">
-  <title>مدرسة السادات بنين</title>
-  <meta name="description" content="الموقع الرسمي لمدرسة السادات بنين، أخبار المدرسة والأنشطة والخدمات التعليمية">
+  
+  <title>مدرسة السادات الثانوية بنين | البوابة الإلكترونية الرسمية</title>
+  <meta name="description" content="الموقع الرسمي لمدرسة السادات الثانوية بنين بإدارة السنبلاوين التعليمية - مديرية التربية والتعليم بالدقهلية. خدمات الطلاب، التقييمات، الجداول المدرسية، ومعرض الأنشطة.">
+  <meta name="keywords" content="مدرسة السادات الثانوية بنين, مدرسة السادات بالسنبلاوين, إدارة السنبلاوين التعليمية, مديرية التربية والتعليم بالدقهلية, خدمات الطلاب, التقييمات المدرسية, نتيجة الثانوية">
+  <meta name="author" content="الطالب أدهم محمد إبراهيم - مدرسة السادات">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="مدرسة السادات الثانوية بنين - البوابة الرسمية">
+  <meta property="og:description" content="البوابة الإلكترونية المعتمدة لمدرسة السادات الثانوية بنين بالسنبلاوين">
+  <meta property="og:image" content="مدرسه السادات.png">
+  <meta property="og:type" content="website">
+  
   <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon">
+  
+  <!-- Google Fonts: Cairo & Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6.5.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    /* ══════════════════════════════════════════════════════════════
+       DESIGN SYSTEM & CSS VARIABLES
+       ══════════════════════════════════════════════════════════════ */
     :root {
-      --green-dark: #0a3d2e;
-      --green-mid: #145a3f;
-      --green-light: #1e7a55;
-      --green-accent: #27ae73;
-      --gold: #c9971c;
-      --gold-light: #f0c040;
-      --cream: #faf8f3;
-      --white: #ffffff;
-      --text-dark: #1a1a1a;
-      --text-mid: #444;
-      --text-soft: #777;
-      --border: #e0dbd0;
-      --shadow: 0 4px 24px rgba(10,61,46,0.10);
-      --shadow-lg: 0 12px 48px rgba(10,61,46,0.16);
-      --radius: 16px;
-      --radius-sm: 10px;
+      /* Brand Palette: Royal Emerald & Warm Gold */
+      --green-darkest: #041a13;
+      --green-dark: #082d20;
+      --green-deep: #0e4532;
+      --green-mid: #166448;
+      --green-light: #1e835e;
+      --green-accent: #25a777;
+      --green-soft: #eaf6f0;
+      
+      --gold-dark: #a2750e;
+      --gold: #cfa12b;
+      --gold-light: #f5cf53;
+      --gold-pale: #fbf4dd;
+      --gold-glow: rgba(207, 161, 43, 0.35);
+
+      /* Neutral & Surface Colors (Light Mode) */
+      --bg-body: #f8f6f0;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #ffffff;
+      --bg-subtle: #f0ece1;
+      --bg-glass: rgba(255, 255, 255, 0.85);
+      --bg-glass-card: rgba(255, 255, 255, 0.7);
+
+      --text-main: #141e19;
+      --text-muted: #53625b;
+      --text-subtle: #7d8c85;
+      --text-white: #ffffff;
+
+      --border-light: rgba(14, 69, 50, 0.10);
+      --border-accent: rgba(207, 161, 43, 0.35);
+      --border-focus: #1e835e;
+
+      --shadow-sm: 0 2px 10px rgba(8, 45, 32, 0.05);
+      --shadow-md: 0 8px 26px rgba(8, 45, 32, 0.08);
+      --shadow-lg: 0 16px 42px rgba(8, 45, 32, 0.12);
+      --shadow-gold: 0 10px 30px rgba(207, 161, 43, 0.28);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+
+      --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+
+      --container-max: 1240px;
     }
 
-    html { scroll-behavior: smooth; }
+    /* ── DARK THEME ── */
+    [data-theme="dark"] {
+      --bg-body: #07130e;
+      --bg-surface: #0e2019;
+      --bg-surface-elevated: #132a21;
+      --bg-subtle: #162f25;
+      --bg-glass: rgba(14, 32, 25, 0.88);
+      --bg-glass-card: rgba(19, 42, 33, 0.75);
+
+      --text-main: #f0f7f3;
+      --text-muted: #a3bbb0;
+      --text-subtle: #799287;
+
+      --border-light: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(207, 161, 43, 0.4);
+
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 26px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 16px 42px rgba(0, 0, 0, 0.6);
+      --green-soft: rgba(30, 131, 94, 0.18);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       BASE & RESET
+       ══════════════════════════════════════════════════════════════ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
 
     body {
       font-family: 'Cairo', 'Tajawal', sans-serif;
-      background: var(--cream);
-      color: var(--text-dark);
+      background-color: var(--bg-body);
+      color: var(--text-main);
       direction: rtl;
+      line-height: 1.65;
       overflow-x: hidden;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAVBAR ── */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--green-dark);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all var(--transition-fast);
     }
 
-    .navbar {
-      max-width: 1200px;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 1.25rem;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       INSTITUTIONAL TOP BAR
+       ══════════════════════════════════════════════════════════════ */
+    .top-bar {
+      background: var(--green-darkest);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(207, 161, 43, 0.25);
+      padding: 6px 0;
+      position: relative;
+      z-index: 1010;
+    }
+
+    .top-bar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
-    .navbar-brand {
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .top-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-item i {
+      color: var(--gold-light);
+      font-size: 0.85rem;
+    }
+
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--gold-light);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: background var(--transition-fast);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .theme-toggle-btn:hover {
+      background: rgba(207, 161, 43, 0.25);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       MAIN HEADER & STICKY NAVBAR
+       ══════════════════════════════════════════════════════════════ */
+    header.main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: background var(--transition-normal);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 20px;
+    }
+
+    .brand-group {
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
     }
 
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      background: var(--gold);
-      border-radius: 10px;
+    .brand-crests {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 20px;
+      gap: 6px;
     }
 
-    .brand-text {
+    .brand-crest {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.18));
+      transition: transform var(--transition-fast);
+    }
+
+    .brand-group:hover .brand-crest {
+      transform: scale(1.06);
+    }
+
+    .brand-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    [data-theme="dark"] .brand-name {
       color: var(--white);
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.2;
     }
 
-    .brand-text span {
-      display: block;
-      font-size: 11px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.75);
-      font-size: 14px;
+    .brand-sub {
+      font-size: 0.76rem;
+      color: var(--gold-dark);
       font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 8px;
-      transition: all 0.2s;
+    }
+
+    [data-theme="dark"] .brand-sub {
+      color: var(--gold-light);
+    }
+
+    /* Desktop Navigation Links */
+    .nav-menu {
       display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 4px;
+    }
+
+    .nav-item a {
+      display: inline-flex;
       align-items: center;
       gap: 7px;
-      white-space: nowrap;
-    }
-
-    nav ul li a i {
-      font-size: 13px;
-      opacity: 0.75;
-      transition: opacity 0.2s;
-    }
-
-    nav ul li a:hover {
-      color: var(--white);
-      background: rgba(255,255,255,0.1);
-    }
-
-    nav ul li a:hover i { opacity: 1; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(145deg, var(--green-dark) 0%, var(--green-mid) 55%, var(--green-light) 100%);
-      padding: 5rem 1.5rem 4rem;
-      text-align: center;
+      padding: 8px 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
       position: relative;
-      overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
+    .nav-item a i {
+      font-size: 0.95rem;
+      color: var(--green-mid);
+      transition: color var(--transition-fast);
     }
 
-    .hero-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      background: white;
-      padding: 20px 0;
-      width: 36%;
-      margin: auto;
-      border-radius: 15px;
-      box-shadow: 0 2px 15px green;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-logos img {
-      height: 70px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
-    }
-
-    .hero h1 {
-      color: var(--white);
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 900;
-      margin-bottom: 0.75rem;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    }
-
-    .hero-sub {
-      color: rgba(255,255,255,0.75);
-      font-size: clamp(0.95rem, 2vw, 1.1rem);
-      margin-bottom: 2rem;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(201,151,28,0.2);
-      border: 1px solid var(--gold);
+    [data-theme="dark"] .nav-item a i {
       color: var(--gold-light);
-      padding: 6px 20px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      letter-spacing: 0.3px;
-    }
-    
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
     }
 
-    .btn {
+    .nav-item a:hover {
+      background: var(--green-soft);
+      color: var(--green-mid);
+    }
+
+    [data-theme="dark"] .nav-item a:hover {
+      background: rgba(37, 167, 119, 0.15);
+      color: var(--gold-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-portal-fast {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-family: 'Cairo', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.25s;
-      border: 2px solid transparent;
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--green-dark);
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201,151,28,0.4);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border-color: rgba(255,255,255,0.5);
-      color: var(--white);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--white);
-    }
-
-    /* ── SECTION WRAPPER ── */
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-tag {
-      display: inline-block;
-      background: rgba(30,122,85,0.1);
-      color: var(--green-light);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      padding: 5px 16px;
-      border-radius: 50px;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--green-darkest);
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
       font-weight: 800;
-      color: var(--text-dark);
-      position: relative;
-      display: inline-block;
+      box-shadow: 0 4px 14px rgba(207, 161, 43, 0.35);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     }
 
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      right: 0;
-      width: 50px;
-      height: 4px;
-      background: var(--gold);
+    .btn-portal-fast:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(207, 161, 43, 0.5);
+    }
+
+    .btn-portal-fast i {
+      font-size: 1rem;
+    }
+
+    /* Mobile Hamburger */
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--green-soft);
+      padding: 10px;
+      cursor: pointer;
+      border: 1px solid var(--border-light);
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 100%;
+      height: 2.5px;
+      background: var(--green-dark);
       border-radius: 2px;
+      transition: all var(--transition-normal);
     }
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
+    [data-theme="dark"] .mobile-toggle span {
+      background: var(--gold-light);
     }
 
-    /* ── INSTRUCTIONS GRID ── */
-    .instructions-bg {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
     }
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* ══════════════════════════════════════════════════════════════
+       NEWS TICKER (شريط الأخبار والتنبيهات العاجلة)
+       ══════════════════════════════════════════════════════════════ */
+    .news-ticker-bar {
+      background: linear-gradient(90deg, var(--green-dark) 0%, var(--green-mid) 100%);
+      color: #fff;
+      padding: 8px 0;
+      font-size: 0.88rem;
+      overflow: hidden;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .ticker-wrapper {
+      display: flex;
+      align-items: center;
       gap: 16px;
     }
 
-    .inst-card {
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.25rem;
-      text-align: center;
-      text-decoration: none;
-      color: var(--text-dark);
-      transition: all 0.25s;
-      display: flex;
-      flex-direction: column;
+    .ticker-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 7px;
+      background: var(--gold);
+      color: var(--green-darkest);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .ticker-badge i {
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.75; }
+    }
+
+    .ticker-content {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      flex-grow: 1;
+    }
+
+    .ticker-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: tickerAnimation 32s linear infinite;
+      padding-right: 50px;
+    }
+
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 36px;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
+    }
+
+    .ticker-item::before {
+      content: '✦';
+      color: var(--gold-light);
+      font-size: 0.75rem;
+    }
+
+    @keyframes tickerAnimation {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       HERO SHOWCASE SECTION
+       ══════════════════════════════════════════════════════════════ */
+    .hero-section {
+      position: relative;
+      background: linear-gradient(135deg, var(--green-darkest) 0%, var(--green-dark) 45%, var(--green-deep) 100%);
+      color: #fff;
+      padding: 4.5rem 0 4rem;
+      overflow: hidden;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    /* Subtle Islamic / Geometric Lattice Background */
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(rgba(207, 161, 43, 0.12) 1.5px, transparent 1.5px),
+        radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(207, 161, 43, 0.18) 0%, transparent 70%);
+      top: -100px;
+      right: -80px;
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 167, 119, 0.22) 0%, transparent 70%);
+      bottom: -100px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Official Crests Showcase Bar */
+    .official-crests-strip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      padding: 10px 24px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 0 1.5px var(--gold);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .official-crest-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .official-crest-item img {
+      height: 48px;
+      width: auto;
+      max-width: 70px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+      transition: transform var(--transition-fast);
+    }
+
+    .official-crest-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .crest-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-welcome-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(207, 161, 43, 0.18);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 6px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+      text-shadow: 0 3px 15px rgba(0,0,0,0.4);
+    }
+
+    .hero-title .title-accent {
+      background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.8;
+      max-width: 780px;
+      margin: 0 auto 2.2rem;
+      font-weight: 500;
+    }
+
+    .hero-actions-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition-normal);
       position: relative;
       overflow: hidden;
     }
 
-    .inst-card::before {
+    .btn-gold-solid {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--green-darkest);
+      box-shadow: 0 6px 22px rgba(207, 161, 43, 0.4);
+      border: 1px solid var(--gold-light);
+    }
+
+    .btn-gold-solid:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(207, 161, 43, 0.55);
+      color: #000;
+    }
+
+    .btn-glass-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-glass-outline:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-facebook-brand {
+      background: #1877f2;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(24, 119, 242, 0.35);
+    }
+
+    .btn-facebook-brand:hover {
+      background: #0d65d9;
+      transform: translateY(-3px);
+    }
+
+    .btn-ramadan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(207, 161, 43, 0.15);
+      border: 1.5px solid var(--gold);
+      color: var(--gold-light);
+      padding: 10px 24px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+      margin-top: 0.5rem;
+    }
+
+    .btn-ramadan-badge:hover {
+      background: rgba(207, 161, 43, 0.35);
+      transform: scale(1.03);
+    }
+
+    /* Quick Stats Highlights Ribbon */
+    .hero-stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 14px 10px;
+      backdrop-filter: blur(8px);
+      transition: transform var(--transition-fast), background var(--transition-fast);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--gold);
+    }
+
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1.1;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat-desc {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 600;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION TITLES & COMMONS
+       ══════════════════════════════════════════════════════════════ */
+    .section-wrap {
+      padding: 4.5rem 0;
+      position: relative;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-soft);
+      color: var(--green-mid);
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 5px 16px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+      border: 1px solid rgba(22, 100, 72, 0.15);
+    }
+
+    [data-theme="dark"] .section-tag {
+      color: var(--gold-light);
+      background: rgba(207, 161, 43, 0.15);
+      border-color: rgba(207, 161, 43, 0.3);
+    }
+
+    .section-heading {
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      font-weight: 900;
+      color: var(--text-main);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--green-accent) 100%);
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    .section-subtext {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       INTERACTIVE SEARCH & FILTER BAR
+       ══════════════════════════════════════════════════════════════ */
+    .filter-search-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .search-input-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-input-box i {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--green-mid);
+      font-size: 1.1rem;
+    }
+
+    [data-theme="dark"] .search-input-box i {
+      color: var(--gold-light);
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 48px 14px 16px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--border-light);
+      background: var(--bg-body);
+      color: var(--text-main);
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+
+    .search-input:focus {
+      border-color: var(--green-accent);
+      background: var(--bg-surface);
+      box-shadow: 0 0 0 4px rgba(37, 167, 119, 0.15);
+    }
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 7px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg-body);
+      border: 1px solid var(--border-light);
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .filter-btn:hover {
+      color: var(--green-dark);
+      border-color: var(--green-mid);
+    }
+
+    .filter-btn.active {
+      background: var(--green-dark);
+      color: #fff;
+      border-color: var(--green-dark);
+      box-shadow: 0 3px 10px rgba(8, 45, 32, 0.25);
+    }
+
+    [data-theme="dark"] .filter-btn.active {
+      background: var(--gold);
+      color: var(--green-darkest);
+      border-color: var(--gold);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SERVICES & ACADEMIC GRID (بطاقات الخدمات والصفوف)
+       ══════════════════════════════════════════════════════════════ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--text-main);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+    }
+
+    .service-card::before {
       content: '';
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
       height: 4px;
-      background: var(--green-light);
+      background: linear-gradient(90deg, var(--gold) 0%, var(--green-accent) 100%);
       transform: scaleX(0);
       transform-origin: right;
-      transition: transform 0.25s;
+      transition: transform var(--transition-normal);
     }
 
-    .inst-card:hover {
-      background: var(--white);
-      border-color: var(--green-light);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--green-accent);
     }
 
-    .inst-card:hover::before {
+    .service-card:hover::before {
       transform: scaleX(1);
     }
 
-    .inst-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(30,122,85,0.1);
-      border-radius: 14px;
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+
+    .card-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      background: var(--green-soft);
+      color: var(--green-mid);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      color: var(--green-light);
+      font-size: 1.4rem;
+      transition: all var(--transition-fast);
     }
 
-    .inst-card span {
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.4;
+    [data-theme="dark"] .card-icon-box {
+      background: rgba(37, 167, 119, 0.18);
+      color: var(--gold-light);
     }
 
-    .inst-card small {
-      font-size: 12px;
-      color: var(--text-soft);
+    .service-card:hover .card-icon-box {
+      background: var(--green-dark);
+      color: var(--gold-light);
+      transform: scale(1.08) rotate(4deg);
     }
 
-    /* ── PHOTO GALLERY ── */
-    .photos-bg {
-      background: var(--cream);
+    .card-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-light);
+      padding-top: 0.9rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--green-mid);
+    }
+
+    [data-theme="dark"] .card-footer {
+      color: var(--gold-light);
+    }
+
+    .card-footer i {
+      transition: transform var(--transition-fast);
+    }
+
+    .service-card:hover .card-footer i {
+      transform: translateX(-4px);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       HIGHLIGHTS: SCHOOL INSTRUCTIONS (أهم التعليمات والانضباط)
+       ══════════════════════════════════════════════════════════════ */
+    .rules-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .rule-item {
+      background: var(--bg-body);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .rule-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .rule-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(207, 161, 43, 0.15);
+      color: var(--gold-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    [data-theme="dark"] .rule-icon {
+      color: var(--gold-light);
+    }
+
+    .rule-item h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .rule-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .rule-law-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      background: var(--green-soft);
+      padding: 2px 10px;
+      border-radius: 4px;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    [data-theme="dark"] .rule-law-tag {
+      color: var(--gold-light);
+      background: rgba(207, 161, 43, 0.2);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       PHOTO & EVENT GALLERY (معرض الصور والفعاليات)
+       ══════════════════════════════════════════════════════════════ */
+    .gallery-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 22px;
     }
 
-    .photo-card {
-      background: var(--white);
-      border-radius: var(--radius);
+    .gallery-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: all 0.3s;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: all var(--transition-normal);
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
-    .photo-card:hover {
+    .gallery-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
     }
 
-    .photo-card img {
+    .gallery-thumb-wrap {
+      position: relative;
       width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
+      height: 230px;
+      overflow: hidden;
+      background: #141e19;
     }
 
-    .photo-card-body {
-      padding: 1rem 1.25rem;
+    .gallery-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-smooth);
+    }
+
+    .gallery-card:hover .gallery-thumb-wrap img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(4, 26, 19, 0.85) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-zoom-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--green-darkest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.7);
+      transition: transform var(--transition-fast);
+    }
+
+    .gallery-card:hover .gallery-zoom-icon {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .gallery-meta {
+      padding: 1.1rem 1.25rem;
+    }
+
+    .gallery-tag-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      background: var(--gold-pale);
+      padding: 2px 10px;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    [data-theme="dark"] .gallery-tag-pill {
+      color: var(--gold-light);
+      background: rgba(207, 161, 43, 0.2);
+    }
+
+    .gallery-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gallery-title i {
+      color: var(--green-mid);
+    }
+
+    [data-theme="dark"] .gallery-title i {
+      color: var(--gold-light);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       HONOR BOARD SECTION (لوحة الشرف الإدارية)
+       ══════════════════════════════════════════════════════════════ */
+    .honor-section {
+      background: linear-gradient(145deg, var(--green-darkest) 0%, var(--green-dark) 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .honor-section .section-heading {
+      color: #fff;
+    }
+
+    .honor-section .section-subtext {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .honor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .honor-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition-normal);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+    }
+
+    .honor-card:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: var(--gold);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .honor-crown-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      color: var(--gold-light);
+      font-size: 1.1rem;
+    }
+
+    .honor-avatar-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--green-darkest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 6px 20px rgba(207, 161, 43, 0.4);
+      border: 3px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .honor-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .honor-role {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .honor-btn-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(207, 161, 43, 0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all var(--transition-fast);
+    }
+
+    .honor-card:hover .honor-btn-link {
+      background: var(--gold);
+      color: var(--green-darkest);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SCHOOL VISION & MISSION BANNER
+       ══════════════════════════════════════════════════════════════ */
+    .vision-strip {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 3rem 0;
+    }
+
+    .vision-box {
+      background: linear-gradient(135deg, rgba(8, 45, 32, 0.03) 0%, rgba(207, 161, 43, 0.08) 100%);
+      border: 1.5px dashed var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .vision-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      background: var(--green-dark);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .vision-content {
+      flex-grow: 1;
+    }
+
+    .vision-content h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--green-dark);
+    }
+
+    [data-theme="dark"] .vision-content h3 {
+      color: var(--gold-light);
+    }
+
+    .vision-content p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .vision-action {
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       FOOTER & COMPLAINT BOX
+       ══════════════════════════════════════════════════════════════ */
+    footer.main-footer {
+      background: #03140f;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 4.5rem 0 2rem;
+      border-top: 4px solid var(--gold);
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 36px;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .photo-card-body i {
-      color: var(--gold);
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
     }
 
-    .photo-card-body p {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-mid);
-    }
-
-    /* ── HONOR BOARD ── */
-    .honor-bg {
-      background: var(--green-dark);
-    }
-
-    .honor-bg .section-tag {
-      background: rgba(201,151,28,0.2);
+    .footer-title {
+      font-size: 1.05rem;
+      font-weight: 800;
       color: var(--gold-light);
+      margin-bottom: 1.2rem;
+      position: relative;
+      padding-bottom: 6px;
     }
 
-    .honor-bg .section-title {
-      color: var(--white);
-    }
-
-    .honor-bg .section-title::after {
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 2px;
       background: var(--gold);
     }
 
-    .honor-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .honor-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.25rem;
+    .footer-links li a {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.72);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links li a:hover {
+      color: var(--gold-light);
+      transform: translateX(-4px);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-item i {
+      color: var(--gold-light);
+      margin-top: 4px;
+    }
+
+    .footer-btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25d366;
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      margin-top: 10px;
+    }
+
+    .footer-btn-whatsapp:hover {
+      background: #1ebc59;
+      transform: translateY(-2px);
+    }
+
+    .footer-credit-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      margin-bottom: 2rem;
       text-align: center;
-      transition: all 0.25s;
-      cursor: default;
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
     }
 
-    .honor-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--gold);
-      transform: translateY(-3px);
+    .footer-credit-card a {
+      color: var(--gold-light);
+      font-weight: 700;
     }
 
-    .honor-avatar {
-      width: 56px;
-      height: 56px;
-      background: var(--gold);
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       FLOATING ACTION BUTTONS (WHATSAPP & SCROLL TOP)
+       ══════════════════════════════════════════════════════════════ */
+    .floating-actions {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+
+    .fab-btn {
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      color: var(--green-dark);
-      margin: 0 auto 12px;
-      font-weight: 800;
+      font-size: 1.3rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: all var(--transition-fast);
+      cursor: pointer;
     }
 
-    .honor-name {
-      color: var(--white);
-      font-size: 15px;
-      font-weight: 700;
+    .fab-whatsapp {
+      background: #25d366;
+      color: #fff;
     }
 
-    .honor-title {
-      color: rgba(255,255,255,0.5);
-      font-size: 12px;
-      margin-top: 4px;
+    .fab-whatsapp:hover {
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
     }
 
-    /* ── THANKS ── */
-    .thanks-strip {
-      background: var(--white);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 1.5rem;
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-soft);
-    }
-
-    .thanks-strip strong {
-      color: var(--text-dark);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #06211a;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-
-    .footer-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .footer-logo {
-      width: 40px;
-      height: 40px;
-      background: var(--gold);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      margin: 0 auto 1rem;
-    }
-
-    .footer-text {
-      color: rgba(255,255,255,0.55);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .footer-text a {
+    .fab-scroll-top {
+      background: var(--green-dark);
       color: var(--gold-light);
-      text-decoration: none;
-    }
-
-    .footer-phone {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(201,151,28,0.15);
-      border: 1px solid rgba(201,151,28,0.3);
-      color: var(--gold-light);
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 600;
-      margin-top: 1rem;
-      text-decoration: none;
-    }
-
-    #nav {
-        display: flex;
-        list-style: none;
-        gap: 15px;
-    }
-    a {
-        text-decoration: none;
-        color: white;
-    }
-    .footer-copy {
-      color: rgba(255,255,255,0.25);
-      font-size: 11px;
-      margin-top: 1.5rem;
-    }
-
-    /* ── SCROLL-IN ANIMATION ── */
-    .fade-up {
+      border: 1px solid var(--gold);
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      visibility: hidden;
+      transform: translateY(20px);
     }
 
-    .fade-up.visible {
+    .fab-scroll-top.visible {
       opacity: 1;
+      visibility: visible;
       transform: translateY(0);
     }
 
-    /* ── TABLET: shrink link text ── */
-    @media (max-width: 1024px) and (min-width: 769px) {
-      .brand-text { font-size: 15px; }
-      .brand-text span { display: none; }
-      nav ul li a { font-size: 13px; padding: 7px 10px; }
-      .brand-icon { width: 36px; height: 36px; font-size: 17px; }
+    .fab-scroll-top:hover {
+      background: var(--gold);
+      color: var(--green-darkest);
     }
 
-    /* ── MOBILE: hamburger menu ── */
-    @media (max-width: 768px) {
-      .navbar { height: 60px; padding: 0 1rem; }
+    /* ══════════════════════════════════════════════════════════════
+       PHOTO LIGHTBOX MODAL
+       ══════════════════════════════════════════════════════════════ */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 26, 19, 0.95);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+      backdrop-filter: blur(12px);
+    }
 
-      .brand-text { font-size: 14px; }
-      .brand-text span { display: none; }
-      .brand-icon { width: 34px; height: 34px; font-size: 16px; border-radius: 8px; }
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-      .hamburger {
-        display: flex;
-        z-index: 1100;
-      }
+    .lightbox-content {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
 
-      /* animated X on open */
-      .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      .hamburger.active span:nth-child(2) {
-        opacity: 0;
-        transform: scaleX(0);
-      }
-      .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
+    .lightbox-img {
+      max-height: 75vh;
+      max-width: 100%;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      margin: 0 auto;
+      border: 2px solid var(--gold);
+    }
 
-      #nav {
+    .lightbox-caption {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      left: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+
+    .lightbox-close:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       MOBILE DRAWER MENU
+       ══════════════════════════════════════════════════════════════ */
+    .mobile-drawer {
+      display: none;
+    }
+
+    @media (max-width: 991px) {
+      .top-bar { display: none; }
+      .navbar { height: 68px; }
+      .nav-menu { display: none; }
+      .btn-portal-fast { display: none; }
+      .mobile-toggle { display: flex; }
+
+      .mobile-drawer {
+        display: block;
         position: fixed;
-        top: 60px;
+        top: 68px;
         right: 0;
         left: 0;
-        background: var(--green-dark);
-        flex-direction: column;
-        padding: 0.5rem 1rem 1rem;
-        gap: 2px;
+        background: var(--bg-surface-elevated);
+        border-bottom: 2px solid var(--gold);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.35s ease, padding 0.35s ease;
-        z-index: 999;
-        border-bottom: 2px solid var(--gold);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+        padding: 0 1.25rem;
+        z-index: 998;
       }
 
-      #nav.active {
-        max-height: 320px;
-        padding: 0.75rem 1rem 1rem;
+      .mobile-drawer.active {
+        max-height: 480px;
+        padding: 1.25rem;
+        overflow-y: auto;
       }
 
-      nav ul { flex-direction: column; }
+      .mobile-nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
 
-      nav ul li a {
-        padding: 11px 14px;
+      .mobile-nav-list li a {
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 15px;
-        border-radius: 10px;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: var(--radius-sm);
+        font-size: 0.96rem;
+        font-weight: 700;
+        color: var(--text-main);
+        border-bottom: 1px solid var(--border-light);
       }
 
-
-      .hero-logos {
-        width: 90%;
+      .mobile-nav-list li a i {
+        color: var(--green-mid);
+        width: 22px;
       }
 
-      nav ul li a i {
-        width: 28px;
-        height: 28px;
-        background: rgba(255,255,255,0.08);
-        border-radius: 7px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-        flex-shrink: 0;
+      .mobile-nav-list li a:hover {
+        background: var(--green-soft);
+        color: var(--green-mid);
       }
 
-      nav ul li:last-child a { border-bottom: none; }
+      .hero-stats-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
     }
 
-    /* ── SMALL PHONES ── */
-    @media (max-width: 380px) {
-      .brand-text { font-size: 13px; }
-      .navbar { padding: 0 0.75rem; }
+    @media (max-width: 640px) {
+      .hero-stats-ribbon {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .official-crests-strip {
+        gap: 10px;
+        padding: 8px 16px;
+      }
+
+      .official-crest-item img {
+        height: 38px;
+      }
+
+      .floating-actions {
+        bottom: 16px;
+        left: 16px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       MICRO-ANIMATIONS & INTERSECTION OBSERVER
+       ══════════════════════════════════════════════════════════════ */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-in-up.appear {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ── HEADER ── -->
-  <header>
-    <div class="navbar">
-      <div class="navbar-brand">
-        <div class="brand-icon">🏫</div>
-        <div class="brand-text">
-          مدرسة السادات الثانوية بنين
-          <span>إدارة السنبلاوين التعليمية</span>
+  <!-- ══════════════════════════════════════════════════════════════
+       1. TOP INSTITUTIONAL BAR
+       ══════════════════════════════════════════════════════════════ -->
+  <aside class="top-bar" aria-label="شريط المعلومات والاعتماد الوزاري">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="top-item">
+          <i class="fa-solid fa-landmark"></i>
+          <span>جمهورية مصر العربية · وزارة التربية والتعليم والتعليم الفني</span>
+        </span>
+        <span class="top-item">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>مديرية الدقهلية · إدارة السنبلاوين التعليمية</span>
+        </span>
+      </div>
+
+      <div class="top-bar-right">
+        <span class="top-item" id="currentDateDisplay">
+          <i class="fa-regular fa-calendar-days"></i>
+          <span>جاري تحميل التاريخ...</span>
+        </span>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="تبديل الوضع الليلي">
+          <i class="fa-solid fa-moon"></i>
+          <span id="themeToggleText">الوضع الليلي</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       2. STICKY NAVBAR
+       ══════════════════════════════════════════════════════════════ -->
+  <header class="main-header" id="navbar">
+    <div class="container">
+      <nav class="navbar" aria-label="القائمة الرئيسية">
+        
+        <!-- School Crest & Brand Name -->
+        <a href="index.html" class="brand-group" title="الصفحة الرئيسية - مدرسة السادات الثانوية بنين">
+          <div class="brand-crests">
+            <img src="مدرسه السادات.png" alt="شعار مدرسة السادات الثانوية بنين" class="brand-crest" width="48" height="48">
+            <img src="مدريه.png" alt="شعار مديرية التربية والتعليم بالدقهلية" class="brand-crest" width="48" height="48">
+          </div>
+          <div class="brand-details">
+            <h1 class="brand-name">مدرسة السادات الثانوية بنين</h1>
+            <span class="brand-sub">إدارة السنبلاوين التعليمية</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <ul class="nav-menu" id="navLinks">
+          <li class="nav-item"><a href="#services"><i class="fa-solid fa-graduation-cap"></i> خدمات الطلاب</a></li>
+          <li class="nav-item"><a href="#rules"><i class="fa-solid fa-book-bookmark"></i> تعليمات المدرسة</a></li>
+          <li class="nav-item"><a href="#gallery"><i class="fa-solid fa-images"></i> صور المدرسة</a></li>
+          <li class="nav-item"><a href="#honor"><i class="fa-solid fa-award"></i> لوحة الشرف</a></li>
+          <li class="nav-item"><a href="zew.html"><i class="fa-solid fa-bullseye"></i> الرؤية والرسالة</a></li>
+          <li class="nav-item"><a href="#footer"><i class="fa-solid fa-headset"></i> تواصل معنا</a></li>
+        </ul>
+
+        <!-- Navigation Actions & Fast Portal CTA -->
+        <div class="nav-actions">
+          <a href="https://ellibrary.moe.gov.eg/" target="_blank" class="btn-portal-fast" title="المكتبة الإلكترونية وتقييمات الوزارة">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>المكتبة الإلكترونية</span>
+          </a>
+
+          <button class="mobile-toggle" id="mobileToggle" aria-label="فتح القائمة المتنقلة" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-      </div>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-      <ul id="nav">
-        <li><a href="#monas"><i class="fa-solid fa-book-open"></i> تعليمات المدرسة</a></li>
-        <li><a href="#photo"><i class="fa-solid fa-images"></i> صور المدرسة</a></li>
-        <li><a href="#techar"><i class="fa-solid fa-star"></i> لوحة الشرف</a></li>
-        <li><a href="#footer"><i class="fa-solid fa-phone"></i> تواصل معنا</a></li>
-      </ul>
+
+      </nav>
     </div>
   </header>
 
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul class="mobile-nav-list">
+      <li><a href="#services"><i class="fa-solid fa-graduation-cap"></i> خدمات الطلاب وشئون القيد</a></li>
+      <li><a href="#rules"><i class="fa-solid fa-book-bookmark"></i> تعليمات المدرسة والانضباط</a></li>
+      <li><a href="#gallery"><i class="fa-solid fa-images"></i> معرض صور المدرسة والأنشطة</a></li>
+      <li><a href="#honor"><i class="fa-solid fa-award"></i> لوحة الشرف والقيادات الإدارية</a></li>
+      <li><a href="zew.html"><i class="fa-solid fa-bullseye"></i> رؤية ورسالة وأهداف المدرسة</a></li>
+      <li><a href="الاخبار.html"><i class="fa-solid fa-bullhorn"></i> آخر أخبار المدرسة والندوات</a></li>
+      <li><a href="شئون الطلبه.html"><i class="fa-solid fa-id-card-clip"></i> قسم شئون الطلبة الكامل</a></li>
+      <li><a href="https://forms.gle/NKTSYKrrZcdNCTHYA" target="_blank"><i class="fa-solid fa-comment-dots"></i> تقديم شكوى أو مقترح</a></li>
+      <li><a href="#footer"><i class="fa-solid fa-phone"></i> تواصل معنا والاستعلامات</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       3. NEWS & ANNOUNCEMENTS TICKER
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="news-ticker-bar" aria-label="شريط الإعلانات العاجلة">
+    <div class="container ticker-wrapper">
+      <div class="ticker-badge">
+        <i class="fa-solid fa-bell"></i>
+        <span>إعلانات هامة</span>
+      </div>
+      <div class="ticker-content">
+        <div class="ticker-track">
+          <span class="ticker-item">الالتزام بمواعيد طابور الصباح الساعة 7:45 ص وإغلاق البوابة بعد الطابور مباشرة.</span>
+          <span class="ticker-item">الالتزام بالزي المدرسي الموحد (التيشيرت الأخضر) طبقاً للقرار الوزاري 167 لسنة 2013.</span>
+          <span class="ticker-item">حظر اصطحاب الهاتف المحمول داخل المدرسة طبقاً للقرار الوزاري 150 لسنة 2024.</span>
+          <span class="ticker-item">نماذج التقييمات الأسبوعية ونماذج الاسترشادية 2025–2026 متاحة عبر المكتبة الإلكترونية.</span>
+          <span class="ticker-item">قريباً: تكريم الطلاب الفائقين في امتحانات الفصل الدراسي الأول للصفين الأول والثاني الثانوي.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       4. HERO SHOWCASE SECTION
+       ══════════════════════════════════════════════════════════════ -->
   <main>
+    <section class="hero-section" id="hero">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
 
-    <!-- ── HERO ── -->
-    <section class="hero">
-      <div class="hero-logos">
-        <img src="WhatsApp_Image_2026-02-18_at_2.18.48_PM__1_-removebg-preview.png" alt="شعار">
-        <img src="WhatsApp_Image_2026-02-18_at_2.18.47_PM-removebg-preview.png" alt="شعار">
-        <img src="WhatsApp_Image_2026-02-18_at_2.08.34_PM-removebg-preview.png" alt="شعار">
-        <img src="مدريه.png" alt="شعار">
-        <img src="WhatsApp_Image_2026-02-18_at_2.18.48_PM-removebg-preview.png" alt="شعار">
-      </div>
-      <div class="hero-badge"><a style="color: var(--gold-light);" href="trew.html">🌿 مرحباً بكم</a></div>
-      <h1>مدرسة السادات الثانوية بنين</h1>
-      <p class="hero-sub">مديرية التربية والتعليم بالدقهلية · إدارة السنبلاوين التعليمية</p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="https://www.facebook.com/groups/6692585330849206?locale=ar_AR" target="_blank">
-          <i class="fa-brands fa-facebook"></i> صفحة المدرسة
-        </a>
-        <a class="btn btn-outline" href="https://forms.gle/NKTSYKrrZcdNCTHYA" target="_blank">
-          <i class="fa-solid fa-comment-dots"></i> تقديم شكوى
-        </a>
-      </div>
+      <div class="container hero-container">
+        
+        <!-- Official Crests Showcase Bar -->
+        <div class="official-crests-strip fade-in-up" title="الهوية الرسمية والاعتمادات التعليمية">
+          <div class="official-crest-item" title="شعار مدرسة السادات الثانوية بنين">
+            <img src="WhatsApp_Image_2026-02-18_at_2.18.48_PM__1_-removebg-preview.png" alt="شعار مدرسة السادات">
+          </div>
+          <div class="crest-divider"></div>
+          <div class="official-crest-item" title="مديرية التربية والتعليم بالدقهلية">
+            <img src="مدريه.png" alt="شعار مديرية التربية والتعليم">
+          </div>
+          <div class="crest-divider"></div>
+          <div class="official-crest-item" title="وزارة التربية والتعليم والتعليم الفني">
+            <img src="WhatsApp_Image_2026-02-18_at_2.08.34_PM-removebg-preview.png" alt="وزارة التربية والتعليم">
+          </div>
+          <div class="crest-divider"></div>
+          <div class="official-crest-item" title="جمهورية مصر العربية">
+            <img src="WhatsApp_Image_2026-02-18_at_2.18.47_PM-removebg-preview.png" alt="شعار النسر الجمهوري">
+          </div>
+        </div>
 
-      <!-- Ramadan contest banner -->
-      <div style="margin-top: 2rem;">
-        <a href="عيد.html" target="_blank"
-          style="display:inline-flex;align-items:center;gap:10px;background:rgba(201,151,28,0.15);border:1.5px solid var(--gold);color:var(--gold-light);padding:12px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:700;transition:all .25s;"
-          onmouseover="this.style.background='rgba(201,151,28,0.3)'" onmouseout="this.style.background='rgba(201,151,28,0.15)'">
-         🕋 عيد مبارك عليكم جميعا
-          <i class="fa-solid fa-arrow-left" style="font-size:12px;"></i>
-        </a>
+        <br>
+
+        <!-- Welcome Tag -->
+        <div class="hero-welcome-badge fade-in-up">
+          <i class="fa-solid fa-sparkles"></i>
+          <a href="trew.html" style="color:inherit;text-decoration:none;">بوابة المستقبل التعليمي · مرحباً بكم في صرح العلم والتميز</a>
+        </div>
+
+        <!-- Grand Heading -->
+        <h2 class="hero-title fade-in-up">
+          <span class="title-accent">مدرسة السادات الثانوية بنين</span>
+        </h2>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle fade-in-up">
+          منارة تعليمية رائدة بإدارة السنبلاوين التعليمية - محافظة الدقهلية. نعمل برؤية طموحة لبناء جيل متميز خلقياً وعلمياً وتكنولوجياً قادر على مواكبة العصر.
+        </p>
+
+        <!-- Action CTAs -->
+        <div class="hero-actions-group fade-in-up">
+          <a href="#services" class="btn-main btn-gold-solid">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>استكشف الخدمات المدرسية</span>
+          </a>
+
+          <a href="https://ellibrary.moe.gov.eg/" target="_blank" class="btn-main btn-glass-outline">
+            <i class="fa-solid fa-book-open"></i>
+            <span>التقييمات والمكتبة الإلكترونية</span>
+          </a>
+
+          <a href="https://www.facebook.com/groups/6692585330849206?locale=ar_AR" target="_blank" class="btn-main btn-facebook-brand">
+            <i class="fa-brands fa-facebook"></i>
+            <span>صفحة المدرسة الرسمية</span>
+          </a>
+
+          <a href="https://forms.gle/NKTSYKrrZcdNCTHYA" target="_blank" class="btn-main btn-glass-outline">
+            <i class="fa-solid fa-comments"></i>
+            <span>تقديم شكوى أو مقترح</span>
+          </a>
+        </div>
+
+        <!-- Festive / Contest Link -->
+        <div class="fade-in-up">
+          <a href="عيد.html" class="btn-ramadan-badge" title="تهنئة المدرسة والمسابقات">
+            <i class="fa-solid fa-kaaba"></i>
+            <span>تهنئة المناسبات والمسابقات الطلابية</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- Quick Stats Highlights Ribbon -->
+        <div class="hero-stats-ribbon fade-in-up">
+          <div class="stat-card">
+            <span class="stat-num">+١٥٠٠</span>
+            <span class="stat-desc">طالب بالصفوف الثانوية</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">+٦٠</span>
+            <span class="stat-desc">معلماً وخبيراً تربوياً</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">٣</span>
+            <span class="stat-desc">صفوف دراسية ومعامل حديثة</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">١٠٠٪</span>
+            <span class="stat-desc">ريادة ورعاية متكاملة</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ── INSTRUCTIONS ── -->
-    <div class="instructions-bg" id="monas">
-      <div class="section">
-        <div class="section-header fade-up">
-          <div class="section-tag">المحتوى التعليمي</div>
-          <h2 class="section-title">تعليمات المدرسة</h2>
+    <!-- ══════════════════════════════════════════════════════════════
+         5. QUICK ACCESS SERVICES & ACADEMIC PORTALS
+         ══════════════════════════════════════════════════════════════ -->
+    <section class="section-wrap" id="services">
+      <div class="container">
+        
+        <div class="section-head fade-in-up">
+          <span class="section-tag"><i class="fa-solid fa-compass"></i> البوابة الرقمية</span>
+          <h2 class="section-heading">خدمات الطلاب والمحتوى التعليمي</h2>
+          <p class="section-subtext">وصول فوري لكافة الخدمات الطلابية، التقييمات، اللوائح، والمكتبة الإلكترونية المعتمدة</p>
         </div>
-        <div class="cards-grid">
-          <a class="inst-card fade-up" href="https://ellibrary.moe.gov.eg/" target="_blank">
-            <div class="inst-icon"><i class="fa-solid fa-book"></i></div>
-            <span>المكتبة الإلكترونية</span>
-            <small>تقييمات · النماذج الإرشادية 2025–2026</small>
-          </a>
-          <a class="inst-card fade-up" href="التربيه الاجتماعيه.html">
-            <div class="inst-icon"><i class="fa-solid fa-people-group"></i></div>
-            <span>التربية الاجتماعية</span>
-          </a>
-          <a class="inst-card fade-up" href="شئون الطلبه.html">
-            <div class="inst-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <span>شئون الطلبة</span>
-          </a>
-          <a class="inst-card fade-up" href="التربيه النفسيه.html">
-            <div class="inst-icon"><i class="fa-solid fa-brain"></i></div>
-            <span>التربية النفسية</span>
-          </a>
-          <a class="inst-card fade-up" href="shoon.html">
-            <div class="inst-icon"><i class="fa-solid fa-id-card"></i></div>
-            <span>شئون العاملين</span>
-          </a>
-          <a class="inst-card fade-up" href="zew.html">
-            <div class="inst-icon"><i class="fa-solid fa-bullseye"></i></div>
-            <span>رؤية ورسالة وأهداف وقيم المدرسة</span>
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <!-- ── GALLERY ── -->
-    <div class="photos-bg" id="photo">
-      <div class="section">
-        <div class="section-header fade-up">
-          <div class="section-tag">معرض الصور</div>
-          <h2 class="section-title">صور المدرسة</h2>
-        </div>
-        <div class="gallery-grid">
-          <div class="photo-card fade-up">
-            <img src="WhatsApp Image 2026-03-01 at 5.24.12 PM.jpeg" alt="مدرسة السادات بنين">
-            <div class="photo-card-body">
-              <i class="fa-solid fa-school"></i>
-              <p>مدرسة السادات الثانوية بنين</p>
-            </div>
+        <!-- Live Instant Search & Category Filter -->
+        <div class="filter-search-container fade-in-up">
+          <div class="search-input-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="serviceSearchInput" class="search-input" placeholder="ابحث فورياً عن خدمة، صف دراسي، مادة، تقييم، أو لائحة..." aria-label="بحث في الخدمات المدرسية">
           </div>
-          <div class="photo-card fade-up">
-            <img src="WhatsApp Image 2026-05-06 at 3.08.25 PM.jpeg" alt="مدير المدرسة">
-            <div class="photo-card-body">
-              <i class="fa-solid fa-user-tie"></i>
-              <p>مدير مدرسة السادات</p>
-            </div>
-          </div>
-          <div class="photo-card fade-up">
-            <img src="WhatsApp Image 2026-04-27 at 8.44.24 PM.jpeg" alt="طلاب المدرسة">
-            <div class="photo-card-body">
-              <i class="fa-solid fa-users"></i>
-              <p>طلاب مدرسة السادات</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- ── HONOR BOARD ── -->
-    <div class="honor-bg" id="techar">
-      <div class="section">
-        <div class="section-header fade-up">
-          <div class="section-tag">الكوادر الإدارية</div>
-          <h2 class="section-title" style="color:var(--white)">لوحة الشرف الإدارية</h2>
+          <div class="filter-tabs" id="filterTabs">
+            <button class="filter-btn active" data-filter="all">جميع الأقسام</button>
+            <button class="filter-btn" data-filter="academic">التقييمات والمناهج</button>
+            <button class="filter-btn" data-filter="student">شئون الطلبة والصفوف</button>
+            <button class="filter-btn" data-filter="activity">الأنشطة والإرشاد</button>
+            <button class="filter-btn" data-filter="rules">اللوائح والمدرسة</button>
+          </div>
         </div>
+
+        <!-- Services Cards Grid -->
+        <div class="services-grid" id="servicesGrid">
+          
+          <!-- Card 1 -->
+          <a href="https://ellibrary.moe.gov.eg/" target="_blank" class="service-card fade-in-up" data-category="academic" data-keywords="المكتبة الالكترونية تقييمات نماذج ارشادية وزارة التربية والتعليم بنك المعرفة كتب">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-book-atlas"></i></div>
+              <span class="card-badge">الوزارة الرسمية</span>
+            </div>
+            <h3 class="card-title">المكتبة الإلكترونية والتقييمات</h3>
+            <p class="card-desc">تحميل نماذج التقييمات الأسبوعية والشهرية والنماذج الإرشادية المعتمدة لعام 2025–2026 لجميع الصفوف.</p>
+            <div class="card-footer">
+              <span>انتقال للمكتبة</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="شئون الطلبه.html" class="service-card fade-in-up" data-category="student" data-keywords="شئون الطلبة جداول الامتحانات شروط القبول التحويلات مصاريف ملفات">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-user-graduate"></i></div>
+              <span class="card-badge">خدمات القيد</span>
+            </div>
+            <h3 class="card-title">شئون الطلبة وسجلات القيد</h3>
+            <p class="card-desc">دليل شامل لإجراءات التحويل، الأوراق والمستندات المطلوبة، لجان الامتحانات، وقواعد الغياب والحضور.</p>
+            <div class="card-footer">
+              <span>عرض التفاصيل</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="techar.html" class="service-card fade-in-up" data-category="academic" data-keywords="المواد الدراسية عربي انجليزي فرنساوي علوم متكاملة كيمياء فيزياء رياضيات تاريخ فلسفة حاسب">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-chalkboard-user"></i></div>
+              <span class="card-badge">المناهج والتقييم</span>
+            </div>
+            <h3 class="card-title">المواد الدراسية وبنوك الأسئلة</h3>
+            <p class="card-desc">بوابة الوصول المباشر لكافة المواد: اللغة العربية، العلوم المتكاملة، الكيمياء، الفيزياء، الرياضيات واللغات.</p>
+            <div class="card-footer">
+              <span>استعراض المواد</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="الصفوف.html" class="service-card fade-in-up" data-category="student" data-keywords="الصف الاول الثانوي اولي ثانوي تقييمات عربي علوم متكاملة">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-1"></i></div>
+              <span class="card-badge">المرحلة الأولى</span>
+            </div>
+            <h3 class="card-title">الصف الأول الثانوي</h3>
+            <p class="card-desc">جداول الحصص والتقييمات الأسبوعية لمواد الصف الأول الثانوي (عربي، علوم متكاملة، لغات وتاريخ).</p>
+            <div class="card-footer">
+              <span>ملفات الصف الأول</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 5 -->
+          <a href="الصفوف2.html" class="service-card fade-in-up" data-category="student" data-keywords="الصف الثاني الثانوي تانية ثانوي علمي ادبي تقييمات">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-2"></i></div>
+              <span class="card-badge">المرحلة الثانية</span>
+            </div>
+            <h3 class="card-title">الصف الثاني الثانوي</h3>
+            <p class="card-desc">متابعة التقييمات وجداول الشعبتين العلمية والأدبية ونماذج امتحانات الشهر والأنشطة المقررة.</p>
+            <div class="card-footer">
+              <span>ملفات الصف الثاني</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="الصفوف 3.html" class="service-card fade-in-up" data-category="student" data-keywords="الصف الثالث الثانوي تالتة ثانوي الشهادة الثانوية العامة مراجعات">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-3"></i></div>
+              <span class="card-badge">الشهادة الثانوية</span>
+            </div>
+            <h3 class="card-title">الصف الثالث الثانوي</h3>
+            <p class="card-desc">دعم شامل لطلاب الشهادة الثانوية العامة، النماذج الاسترشادية الوزارية وبنوك الأسئلة والفيزياء.</p>
+            <div class="card-footer">
+              <span>ملفات الصف الثالث</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 7 -->
+          <a href="التربيه الاجتماعيه.html" class="service-card fade-in-up" data-category="activity" data-keywords="التربية الاجتماعية انشطة مسابقات رحلات اتحاد الطلاب تكريم الفائقين">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-people-group"></i></div>
+              <span class="card-badge">الأنشطة والريادة</span>
+            </div>
+            <h3 class="card-title">التربية الاجتماعية والأنشطة</h3>
+            <p class="card-desc">متابعة الأنشطة المدرسية، الرحلات التعليمية، الاتحادات الطلابية، وتكريم أوائل الطلبة المتفوقين.</p>
+            <div class="card-footer">
+              <span>عرض الأنشطة</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 8 -->
+          <a href="التربيه النفسيه.html" class="service-card fade-in-up" data-category="activity" data-keywords="التربية النفسية ارشاد نفسي توجيه سلوكي دعم معنوي">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-brain"></i></div>
+              <span class="card-badge">الإرشاد والدعم</span>
+            </div>
+            <h3 class="card-title">التربية النفسية والإرشاد</h3>
+            <p class="card-desc">التوجيه النفسي والتربوي للطلاب لتعزيز الثقة بالنفس، تنظيم أوقات المذاكرة، وتجاوز قلق الاختبارات.</p>
+            <div class="card-footer">
+              <span>الاستشارات والإرشاد</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 9 -->
+          <a href="تعليمات.html" class="service-card fade-in-up" data-category="rules" data-keywords="تعليمات المدرسة لائحة الانضباط الزي المدرسي طابور الصباح القرارات الوزارية منع الموبايل">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+              <span class="card-badge">اللوائح والقرارات</span>
+            </div>
+            <h3 class="card-title">تعليمات وقرارات الانضباط</h3>
+            <p class="card-desc">لائحة الانضباط المدرسي، القرار الوزاري 167 بشأن الزي الموحد، والقرار الوزاري 150 لسنة 2024.</p>
+            <div class="card-footer">
+              <span>قراءة اللائحة الكاملة</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 10 -->
+          <a href="zew.html" class="service-card fade-in-up" data-category="rules" data-keywords="رؤية ورسالة واهداف وقيم المدرسة خطة التطوير">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-bullseye"></i></div>
+              <span class="card-badge">الهوية والأهداف</span>
+            </div>
+            <h3 class="card-title">رؤية ورسالة وقيم المدرسة</h3>
+            <p class="card-desc">استعراض الميثاق التربوي والأهداف الاستراتيجية التي تسعى المدرسة لتحقيقها في خدمة المجتمع والوطن.</p>
+            <div class="card-footer">
+              <span>عرض الميثاق والرسالة</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 11 -->
+          <a href="shoon.html" class="service-card fade-in-up" data-category="rules" data-keywords="شئون العاملين المعلمون الكادر التعليمي هيئة التدريس">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-id-card"></i></div>
+              <span class="card-badge">الكادر الإداري</span>
+            </div>
+            <h3 class="card-title">شئون العاملين وهيئة التدريس</h3>
+            <p class="card-desc">سجلات الكوادر التعليمية والإدارية، وتوزيع المعلمين الأفاضل على المواد الدراسية المختلفة.</p>
+            <div class="card-footer">
+              <span>عرض هيئة التدريس</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+          <!-- Card 12 -->
+          <a href="الاخبار.html" class="service-card fade-in-up" data-category="rules" data-keywords="الاخبار الندوات التدخين الادمان الفائقين فعاليات">
+            <div class="card-top">
+              <div class="card-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+              <span class="card-badge">الأخبار والتغطيات</span>
+            </div>
+            <h3 class="card-title">أخبار المدرسة والندوات</h3>
+            <p class="card-desc">تغطية ندوات التوعية ومناهضة التدخين، ومواعيد تكريم الطلاب المتفوقين والمناسبات الوطنية.</p>
+            <div class="card-footer">
+              <span>آخر الأخبار</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         6. HIGHLIGHTS: SCHOOL RULES & DISCIPLINE
+         ══════════════════════════════════════════════════════════════ -->
+    <section class="section-wrap rules-section" id="rules">
+      <div class="container">
+        
+        <div class="section-head fade-in-up">
+          <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> الانضباط السلوكي</span>
+          <h2 class="section-heading">أبرز تعليمات وضوابط المدرسة</h2>
+          <p class="section-subtext">حرصاً على بيئة تعليمية نموذجية، يرجى من جميع أبنائنا الطلاب الالتزام التام بالقواعد التالية</p>
+        </div>
+
+        <div class="rules-grid">
+          
+          <div class="rule-item fade-in-up">
+            <div class="rule-icon"><i class="fa-regular fa-clock"></i></div>
+            <h3>طابور الصباح والحضور المبكر</h3>
+            <p>الالتزام بالتواجد في طابور الصباح في تمام الساعة 7:45 صباحاً، مع العلم بأنه يتم غلق بوابات المدرسة بعد انتهاء الطابور مباشرة.</p>
+            <span class="rule-law-tag">المواعيد الرسمية</span>
+          </div>
+
+          <div class="rule-item fade-in-up">
+            <div class="rule-icon"><i class="fa-solid fa-shirt"></i></div>
+            <h3>الزي المدرسي الموحد</h3>
+            <p>الالتزام التام بارتداء التيشيرت الأخضر المعتمد للمدرسة، مع بنطلون أسود أو أزرق وحذاء مدرسي لائق، حفاظاً على الهيبة المدرسية.</p>
+            <span class="rule-law-tag">القرار الوزاري 167 لسنة 2013</span>
+          </div>
+
+          <div class="rule-item fade-in-up">
+            <div class="rule-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>حظر الهاتف المحمول نهائياً</h3>
+            <p>يمنع منعاً باتاً إحضار أو استخدام الهاتف المحمول داخل الحرم المدرسي، وتطبق العقوبات القانونية الصارمة بحق المخالفين فوراً.</p>
+            <span class="rule-law-tag">القرار الوزاري 150 لسنة 2024</span>
+          </div>
+
+          <div class="rule-item fade-in-up">
+            <div class="rule-icon"><i class="fa-solid fa-user-check"></i></div>
+            <h3>المظهر والانضباط الأخلاقي</h3>
+            <p>عدم إطالة الشعر أو عمل القصات غير اللائقة، والامتناع عن ارتداء الإكسسوارات والسلاسل، والتحلي بروح الاحترام لأسرة المدرسة.</p>
+            <span class="rule-law-tag">لائحة الانضباط المدرسي</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         7. PHOTO GALLERY & EVENTS SHOWCASE
+         ══════════════════════════════════════════════════════════════ -->
+    <section class="section-wrap" id="gallery">
+      <div class="container">
+        
+        <div class="section-head fade-in-up">
+          <span class="section-tag"><i class="fa-solid fa-camera"></i> معرض الأنشطة</span>
+          <h2 class="section-heading">صور وصروح مدرسة السادات</h2>
+          <p class="section-subtext">جولة بصرية في رحاب المدرسة، قاعاتها، فعالياتها الطلابية، ولقاءات إدارتها المتميزة</p>
+        </div>
+
+        <!-- Filter tabs for Gallery -->
+        <div class="gallery-filter-bar fade-in-up" id="galleryFilterBar">
+          <button class="filter-btn active" data-gfilter="all">جميع الصور</button>
+          <button class="filter-btn" data-gfilter="school">مبنى المدرسة</button>
+          <button class="filter-btn" data-gfilter="leadership">الإدارة والتكريم</button>
+          <button class="filter-btn" data-gfilter="students">الطلاب والأنشطة</button>
+          <button class="filter-btn" data-gfilter="exams">الاختبارات والقاعات</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          
+          <!-- Photo 1: Building -->
+          <div class="gallery-card fade-in-up" data-gcat="school" onclick="openLightbox('WhatsApp Image 2026-03-01 at 5.24.12 PM.jpeg', 'صرح مدرسة السادات الثانوية بنين بالسنبلاوين')">
+            <div class="gallery-thumb-wrap">
+              <img src="WhatsApp Image 2026-03-01 at 5.24.12 PM.jpeg" alt="مبنى مدرسة السادات الثانوية بنين" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </div>
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag-pill">الصرح التعليمي</span>
+              <h4 class="gallery-title"><i class="fa-solid fa-school"></i> مدرسة السادات الثانوية بنين</h4>
+            </div>
+          </div>
+
+          <!-- Photo 2: Principal -->
+          <div class="gallery-card fade-in-up" data-gcat="leadership" onclick="openLightbox('WhatsApp Image 2026-05-06 at 3.08.25 PM.jpeg', 'مدير مدرسة السادات الثانوية بنين - قيادة متميزة وتفانٍ دائم')">
+            <div class="gallery-thumb-wrap">
+              <img src="WhatsApp Image 2026-05-06 at 3.08.25 PM.jpeg" alt="مدير مدرسة السادات" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </div>
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag-pill">القيادة الإدارية</span>
+              <h4 class="gallery-title"><i class="fa-solid fa-user-tie"></i> مدير مدرسة السادات الثانوية</h4>
+            </div>
+          </div>
+
+          <!-- Photo 3: Students -->
+          <div class="gallery-card fade-in-up" data-gcat="students" onclick="openLightbox('WhatsApp Image 2026-04-27 at 8.44.24 PM.jpeg', 'أبناء مدرسة السادات - انضباط وتفوق في الفصول الدراسية')">
+            <div class="gallery-thumb-wrap">
+              <img src="WhatsApp Image 2026-04-27 at 8.44.24 PM.jpeg" alt="طلاب مدرسة السادات" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </div>
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag-pill">الصفوف المدرسية</span>
+              <h4 class="gallery-title"><i class="fa-solid fa-users"></i> طلاب مدرسة السادات في الفصول</h4>
+            </div>
+          </div>
+
+          <!-- Photo 4: Activities -->
+          <div class="gallery-card fade-in-up" data-gcat="students" onclick="openLightbox('WhatsApp Image 2026-04-27 at 8.43.41 PM.jpeg', 'الندوات الطلابية واللقاءات التوعوية في المدرسة')">
+            <div class="gallery-thumb-wrap">
+              <img src="WhatsApp Image 2026-04-27 at 8.43.41 PM.jpeg" alt="الأنشطة والندوات" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </div>
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag-pill">الندوات التوعوية</span>
+              <h4 class="gallery-title"><i class="fa-solid fa-comments"></i> الأنشطة التوعوية والتثقيفية</h4>
+            </div>
+          </div>
+
+          <!-- Photo 5: Honors -->
+          <div class="gallery-card fade-in-up" data-gcat="leadership" onclick="openLightbox('WhatsApp Image 2026-05-07 at 4.48.03 PM.jpeg', 'تكريم القيادات والطلاب المتفوقين في مدرسة السادات')">
+            <div class="gallery-thumb-wrap">
+              <img src="WhatsApp Image 2026-05-07 at 4.48.03 PM.jpeg" alt="التكريم والتميز" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </div>
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag-pill">التكريم والتميز</span>
+              <h4 class="gallery-title"><i class="fa-solid fa-medal"></i> احتفالية تكريم المتميزين</h4>
+            </div>
+          </div>
+
+          <!-- Photo 6: Exams -->
+          <div class="gallery-card fade-in-up" data-gcat="exams" onclick="openLightbox('pngtree-classroom-filled-with-students-taking-a-written-exam-photo-image_18886158.jpg', 'قاعات الامتحانات - تنظيم وهدوء لتوفير أفضل مناخ لأبنائنا الطلاب')">
+            <div class="gallery-thumb-wrap">
+              <img src="pngtree-classroom-filled-with-students-taking-a-written-exam-photo-image_18886158.jpg" alt="قاعات الامتحانات" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+              </div>
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag-pill">الاختبارات</span>
+              <h4 class="gallery-title"><i class="fa-solid fa-file-pen"></i> تنظيم لجان الاختبارات</h4>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         8. ADMINISTRATIVE HONOR BOARD
+         ══════════════════════════════════════════════════════════════ -->
+    <section class="section-wrap honor-section" id="honor">
+      <div class="container">
+        
+        <div class="section-head fade-in-up">
+          <span class="section-tag" style="background: rgba(207, 161, 43, 0.2); color: var(--gold-light);"><i class="fa-solid fa-crown"></i> التميز الإداري</span>
+          <h2 class="section-heading">لوحة الشرف والقيادات الإدارية</h2>
+          <p class="section-subtext">تقدير وعرفان لكوادر المدرسة الذين يواصلون العطاء والريادة في سبيل خدمة العملية التعليمية</p>
+        </div>
+
         <div class="honor-grid">
-          <div class="honor-card fade-up">
-            <div class="honor-avatar">أ</div>
-            <div class="honor-name">أ/ أشرف عبد الباسط</div>
-            <div class="honor-title">مدير متميز</div>
+          
+          <!-- Leader 1 -->
+          <div class="honor-card fade-in-up">
+            <i class="fa-solid fa-crown honor-crown-badge"></i>
+            <div class="honor-avatar-circle">أ</div>
+            <h3 class="honor-name">أ/ أشرف عبد الباسط</h3>
+            <span class="honor-role">مدير المدرسة المتميز</span>
+            <p style="font-size:0.84rem;color:rgba(255,255,255,0.7);line-height:1.6;">قيادة حكيمة ورؤية تربوية متطورة في إدارة المدرسة والارتقاء بمستوى الطلاب.</p>
           </div>
-          <a class="honor-card fade-up" href="https://drive.google.com/drive/folders/1l88TyjHTnRASFL3TiKkJkv26BtJNmqTf?usp=drive_link" style="text-decoration:none;">
-            <div class="honor-avatar" style="background:var(--gold-light)">س</div>
-            <div class="honor-name">أ/ السيد سالم حسين</div>
-            <div class="honor-title" style="color:var(--gold);font-size:12px;"><i class="fa-solid fa-folder-open"></i> عرض الملفات</div>
+
+          <!-- Leader 2 with Google Drive link -->
+          <a class="honor-card fade-in-up" href="https://drive.google.com/drive/folders/1l88TyjHTnRASFL3TiKkJkv26BtJNmqTf?usp=drive_link" target="_blank" title="استعراض الملفات التعليمية عبر Google Drive">
+            <i class="fa-solid fa-folder-open honor-crown-badge"></i>
+            <div class="honor-avatar-circle" style="background: linear-gradient(135deg, #f5cf53 0%, #fff 100%);">س</div>
+            <h3 class="honor-name">أ/ السيد سالم حسين</h3>
+            <span class="honor-role">صاحب الفكرة والإشراف والمتابعة</span>
+            <p style="font-size:0.84rem;color:rgba(255,255,255,0.7);line-height:1.6;margin-bottom:1rem;">جهود متواصلة في المتابعة والتنظيم ومساندة التحول الرقمي بالمدرسة.</p>
+            <span class="honor-btn-link">
+              <i class="fa-solid fa-folder-open"></i>
+              <span>استعراض الملفات (Drive)</span>
+            </span>
           </a>
-          <div class="honor-card fade-up">
-            <div class="honor-avatar">ح</div>
-            <div class="honor-name">أ/ حسن إبراهيم حسين</div>
-            <div class="honor-title">إداري متميز</div>
+
+          <!-- Leader 3 -->
+          <div class="honor-card fade-in-up">
+            <i class="fa-solid fa-star honor-crown-badge"></i>
+            <div class="honor-avatar-circle">ح</div>
+            <h3 class="honor-name">أ/ حسن إبراهيم حسين</h3>
+            <span class="honor-role">إداري متميز</span>
+            <p style="font-size:0.84rem;color:rgba(255,255,255,0.7);line-height:1.6;">دقة متناهية وإخلاص في تسيير المهام الإدارية وخدمة شؤون المعلمين والطلاب.</p>
           </div>
-          <div class="honor-card fade-up">
-            <div class="honor-avatar">م</div>
-            <div class="honor-name">أ/ منى محمود رجال</div>
-            <div class="honor-title">وكيل متميز</div>
+
+          <!-- Leader 4 -->
+          <div class="honor-card fade-in-up">
+            <i class="fa-solid fa-certificate honor-crown-badge"></i>
+            <div class="honor-avatar-circle">م</div>
+            <h3 class="honor-name">أ/ منى محمود رجال</h3>
+            <span class="honor-role">وكيل مدرسة متميز</span>
+            <p style="font-size:0.84rem;color:rgba(255,255,255,0.7);line-height:1.6;">عطاء مستمر وتنظيم دقيق للجداول ومتابعة انتظام اليوم الدراسي بكفاءة.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         9. VISION & MISSION STRIP
+         ══════════════════════════════════════════════════════════════ -->
+    <section class="vision-strip">
+      <div class="container">
+        <div class="vision-box fade-in-up">
+          <div class="vision-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <div class="vision-content">
+            <h3>شكر وتقدير لموجهي المواد ورؤساء المراحل</h3>
+            <p>تتقدم أسرة مدرسة السادات الثانوية بنين ببالغ الشكر والامتنان للسادة رؤساء المراحل التعليمية وموجهي المواد بإدارة السنبلاوين التعليمية ومديرية التربية والتعليم بالدقهلية لجهودهم المخلصة في دعم أبنائنا وبناتنا الطلاب.</p>
+          </div>
+          <div class="vision-action">
+            <a href="zew.html" class="btn-main btn-gold-solid" style="padding: 10px 22px; font-size: 0.9rem;">
+              <i class="fa-solid fa-compass"></i>
+              <span>الرؤية والرسالة</span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- ── THANKS ── -->
-    <div class="thanks-strip fade-up">
-      كل الشكر والتقدير للسادة <strong>رؤساء المراحل</strong> ورؤساء التوجيه الفني للمواد المختلفة
-    </div>
+    </section>
 
   </main>
 
-  <!-- ── FOOTER ── -->
-  <footer id="footer">
-    <div class="footer-content">
-      <div class="footer-logo">🏫</div>
-      <p class="footer-text">
-        فكرة أ/ السيد سالم · البرمجة والتصميم بمحافظة الدقهلية<br>
-        أكاديمية <a href="https://www.gcschool.tech/" target="_blank">GC School</a> · الطالب / <strong style="color:rgba(255,255,255,0.75)">أدهم محمد إبراهيم</strong> — الصف الأول الثانوي<br>
-        هدية مجانية لمدرسة السادات
-      </p>
-      <a class="footer-phone" href="tel:01013984024" onclick="sendWhatsApp9()">
-        <i class="fa-solid fa-phone"></i> 01013984024
-      </a>
-      <p class="footer-copy">© 2026 مدرسة السادات الثانوية بنين — جميع الحقوق محفوظة</p>
+  <!-- ══════════════════════════════════════════════════════════════
+       10. MAIN FOOTER
+       ══════════════════════════════════════════════════════════════ -->
+  <footer class="main-footer" id="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Col 1: About School -->
+        <div class="footer-brand">
+          <h4>
+            <img src="مدرسه السادات.png" alt="شعار مدرسة السادات" width="36" height="36" style="display:inline-block;vertical-align:middle;">
+            <span>مدرسة السادات الثانوية بنين</span>
+          </h4>
+          <p>
+            صرح تعليمي عريق يتبع إدارة السنبلاوين التعليمية - مديرية التربية والتعليم بمحافظة الدقهلية. نلتزم بغرس القيم وتوفير أحدث الوسائل التكنولوجية والتعليمية لأبنائنا الطلاب.
+          </p>
+          <div style="display: flex; gap: 10px;">
+            <a href="https://www.facebook.com/groups/6692585330849206?locale=ar_AR" target="_blank" class="btn-portal-fast" style="padding: 7px 14px; font-size: 0.82rem;" title="جروب المدرسة على فيسبوك">
+              <i class="fa-brands fa-facebook"></i> فيسبوك
+            </a>
+            <a href="https://forms.gle/NKTSYKrrZcdNCTHYA" target="_blank" class="btn-portal-fast" style="padding: 7px 14px; font-size: 0.82rem; background: rgba(255,255,255,0.15); color: #fff;" title="صندوق الشكاوى والمقترحات">
+              <i class="fa-solid fa-comment-medical"></i> شكوى / مقترح
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Fast Links -->
+        <div>
+          <h4 class="footer-title">أقسام الموقع</h4>
+          <ul class="footer-links">
+            <li><a href="#hero"><i class="fa-solid fa-angle-left"></i> الرئيسية</a></li>
+            <li><a href="#services"><i class="fa-solid fa-angle-left"></i> خدمات الطلاب</a></li>
+            <li><a href="شئون الطلبه.html"><i class="fa-solid fa-angle-left"></i> قسم شئون الطلبة</a></li>
+            <li><a href="techar.html"><i class="fa-solid fa-angle-left"></i> المواد الدراسية</a></li>
+            <li><a href="تعليمات.html"><i class="fa-solid fa-angle-left"></i> لائحة الانضباط</a></li>
+            <li><a href="الاخبار.html"><i class="fa-solid fa-angle-left"></i> الأخبار والندوات</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Student Affairs & Portals -->
+        <div>
+          <h4 class="footer-title">بوابات هامة</h4>
+          <ul class="footer-links">
+            <li><a href="https://ellibrary.moe.gov.eg/" target="_blank"><i class="fa-solid fa-angle-left"></i> المكتبة الإلكترونية (الوزارة)</a></li>
+            <li><a href="الصفوف.html"><i class="fa-solid fa-angle-left"></i> الصف الأول الثانوي</a></li>
+            <li><a href="الصفوف2.html"><i class="fa-solid fa-angle-left"></i> الصف الثاني الثانوي</a></li>
+            <li><a href="الصفوف 3.html"><i class="fa-solid fa-angle-left"></i> الصف الثالث الثانوي</a></li>
+            <li><a href="zew.html"><i class="fa-solid fa-angle-left"></i> الأهداف والقيم</a></li>
+            <li><a href="عيد.html"><i class="fa-solid fa-angle-left"></i> الأعياد والمسابقات</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact info -->
+        <div>
+          <h4 class="footer-title">تواصل مع إدارة المدرسة</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>السنبلاوين · محافظة الدقهلية · مصر</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:01013984024" style="color:inherit;direction:ltr;display:inline-block;">01013984024</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>خدمة الاستعلامات عبر واتساب</span>
+          </div>
+          <a href="javascript:void(0)" onclick="sendWhatsAppDirect()" class="footer-btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>محادثة واتساب مباشرة</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Developer & Guidance Tribute Card -->
+      <div class="footer-credit-card">
+        <p>
+          فكرة وإشراف: <strong>أ/ السيد سالم حسين</strong> · تم التصميم والبرمجة بمحافظة الدقهلية — 
+          أكاديمية <a href="https://www.gcschool.tech/" target="_blank">GC School</a><br>
+          تنفيذ الطالب / <strong style="color:var(--gold-light);">أدهم محمد إبراهيم</strong> — الصف الأول الثانوي · هدية مجانية مخلصة لمدرسة السادات الثانوية بنين
+        </p>
+      </div>
+
+      <!-- Footer Bottom Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 مدرسة السادات الثانوية بنين بإدارة السنبلاوين التعليمية — جميع الحقوق محفوظة.</p>
+        <p>البوابة الإلكترونية المعتمدة لخدمة الطلاب وأولياء الأمور والمعلمين.</p>
+      </div>
+
     </div>
   </footer>
 
+  <!-- ══════════════════════════════════════════════════════════════
+       11. FLOATING ACTION BUTTONS (WHATSAPP + SCROLL TO TOP)
+       ══════════════════════════════════════════════════════════════ -->
+  <div class="floating-actions">
+    <button class="fab-btn fab-whatsapp" onclick="sendWhatsAppDirect()" aria-label="تواصل مع المدرسة عبر واتساب" title="تواصل عبر واتساب">
+      <i class="fa-brands fa-whatsapp"></i>
+    </button>
+    <button class="fab-btn fab-scroll-top" id="scrollTopBtn" aria-label="الرجوع لأعلى الصفحة" title="الرجوع للأعلى">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       12. PHOTO LIGHTBOX MODAL
+       ══════════════════════════════════════════════════════════════ -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightboxDirect()" aria-label="إغلاق الصورة"><i class="fa-solid fa-xmark"></i></button>
+      <img src="" alt="عرض مكبر للصورة" class="lightbox-img" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       JAVASCRIPT LOGIC
+       ══════════════════════════════════════════════════════════════ -->
   <script>
-    // Hamburger
-    const hamburger = document.getElementById('hamburger');
-    const nav = document.getElementById('nav');
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      hamburger.classList.toggle('active');
+    // ── 1. DATE DISPLAY (Hijri & Gregorian) ──
+    (function initDate() {
+      const dateEl = document.getElementById('currentDateDisplay');
+      if (!dateEl) return;
+      try {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const arDate = now.toLocaleDateString('ar-EG', options);
+        dateEl.innerHTML = `<i class="fa-regular fa-calendar-days"></i> <span>${arDate}</span>`;
+      } catch (e) {
+        dateEl.textContent = 'مدرسة السادات الثانوية بنين';
+      }
+    })();
+
+    // ── 2. DARK / LIGHT THEME TOGGLE ──
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeToggleText = document.getElementById('themeToggleText');
+    const htmlEl = document.documentElement;
+
+    function applyTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('alsadat_theme', theme);
+      if (theme === 'dark') {
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i> <span>الوضع النهاري</span>';
+      } else {
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i> <span>الوضع الليلي</span>';
+      }
+    }
+
+    const savedTheme = localStorage.getItem('alsadat_theme') || 'light';
+    applyTheme(savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
     });
-    document.querySelectorAll('#nav a').forEach(l => {
-      l.addEventListener('click', () => {
-        nav.classList.remove('active');
-        hamburger.classList.remove('active');
+
+    // ── 3. MOBILE HAMBURGER DRAWER ──
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', false);
       });
     });
 
-    function sendWhatsApp9() {
-  let phone = "201013984024";
-  
- 
+    // ── 4. LIVE SEARCH IN SERVICES ──
+    const serviceSearchInput = document.getElementById('serviceSearchInput');
+    const serviceCards = document.querySelectorAll('.service-card');
 
-  let message = `ممكن حضرتك احجز موقع `;
-  
-  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  
-  window.open(url, "_blank");
-}
+    if (serviceSearchInput) {
+      serviceSearchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim().toLowerCase();
+        serviceCards.forEach(card => {
+          const title = card.querySelector('.card-title').textContent.toLowerCase();
+          const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+          const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+          if (!query || title.includes(query) || desc.includes(query) || keywords.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
 
-    // Scroll-in animation
+    // ── 5. CATEGORY FILTER TABS FOR SERVICES ──
+    const filterBtns = document.querySelectorAll('#filterTabs .filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        serviceCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // ── 6. GALLERY CATEGORY FILTER ──
+    const galleryBtns = document.querySelectorAll('#galleryFilterBar .filter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    galleryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galleryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const gfilter = btn.getAttribute('data-gfilter');
+
+        galleryCards.forEach(card => {
+          const gcat = card.getAttribute('data-gcat');
+          if (gfilter === 'all' || gcat === gfilter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // ── 7. LIGHTBOX MODAL ──
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+
+    function openLightbox(src, caption) {
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption || '';
+      lightboxModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e.target === lightboxModal) {
+        closeLightboxDirect();
+      }
+    }
+
+    function closeLightboxDirect() {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        closeLightboxDirect();
+      }
+    });
+
+    // ── 8. WHATSAPP DIRECT FUNCTION ──
+    function sendWhatsAppDirect() {
+      const phone = "201013984024";
+      const message = "السلام عليكم ورحمة الله وبركاته، أود الاستفسار بخصوص مدرسة السادات الثانوية بنين بالسنبلاوين.";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    // ── 9. SCROLL TO TOP FLOATING BUTTON ──
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── 10. INTERSECTION OBSERVER ANIMATIONS ──
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 80);
-          observer.unobserve(e.target);
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('appear');
+          }, idx * 60);
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08 });
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
   </script>
 
 </body>
