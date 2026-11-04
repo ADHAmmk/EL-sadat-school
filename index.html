@@ -859,6 +859,193 @@
       gap: 20px;
     }
 
+    .student-lookup {
+      position: relative;
+      overflow: hidden;
+      margin: 0 0 2.5rem;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 100% 0, rgba(37, 167, 119, 0.12), transparent 38%),
+        var(--bg-surface);
+      box-shadow: var(--shadow-md);
+    }
+
+    .student-lookup-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .student-lookup-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-main);
+    }
+
+    .student-lookup-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--green-soft);
+      color: var(--green-mid);
+      font-size: 1.25rem;
+    }
+
+    [data-theme="dark"] .student-lookup-icon {
+      color: var(--gold-light);
+    }
+
+    .student-lookup-title h3 {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 900;
+    }
+
+    .student-lookup-title p {
+      margin-top: 3px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .student-lookup-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex: 0 0 auto;
+      padding: 6px 12px;
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-pill);
+      background: var(--gold-pale);
+      color: var(--gold-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    [data-theme="dark"] .student-lookup-badge {
+      background: rgba(207, 161, 43, 0.12);
+      color: var(--gold-light);
+    }
+
+    .student-lookup-form {
+      display: flex;
+      gap: 10px;
+      max-width: 700px;
+    }
+
+    .student-lookup-input {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-md);
+      outline: none;
+      background: var(--bg-body);
+      color: var(--text-main);
+      font: inherit;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .student-lookup-input:focus {
+      border-color: var(--green-accent);
+      box-shadow: 0 0 0 4px rgba(37, 167, 119, 0.15);
+    }
+
+    .student-lookup-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex: 0 0 auto;
+      padding: 0 20px;
+      border-radius: var(--radius-md);
+      background: var(--green-dark);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      transition: transform var(--transition-fast), background var(--transition-fast);
+    }
+
+    .student-lookup-submit:hover {
+      transform: translateY(-2px);
+      background: var(--green-mid);
+    }
+
+    [data-theme="dark"] .student-lookup-submit {
+      background: var(--gold);
+      color: var(--green-darkest);
+    }
+
+    .student-lookup-message {
+      min-height: 1.6em;
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .student-lookup-message.is-notice {
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+
+    [data-theme="dark"] .student-lookup-message.is-notice {
+      color: var(--gold-light);
+    }
+
+    .student-lookup-preview {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    .student-lookup-preview-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      background: var(--bg-body);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .student-lookup-preview-item i {
+      color: var(--green-mid);
+      font-size: 1rem;
+    }
+
+    [data-theme="dark"] .student-lookup-preview-item i {
+      color: var(--gold-light);
+    }
+
+    .student-lookup-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 1rem;
+      color: var(--text-subtle);
+      font-size: 0.78rem;
+    }
+
+    .student-lookup-privacy i {
+      margin-top: 4px;
+      color: var(--green-mid);
+    }
+
+    [data-theme="dark"] .student-lookup-privacy i {
+      color: var(--gold-light);
+    }
+
     .service-card {
       background: var(--bg-surface);
       border: 1.5px solid var(--border-light);
@@ -1712,6 +1899,22 @@
         bottom: 16px;
         left: 16px;
       }
+
+      .student-lookup-header {
+        flex-direction: column;
+      }
+
+      .student-lookup-form {
+        flex-direction: column;
+      }
+
+      .student-lookup-submit {
+        min-height: 48px;
+      }
+
+      .student-lookup-preview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     .fade-in-up {
@@ -1928,6 +2131,56 @@
           <h2 class="section-heading">خدمات الطلاب والمحتوى التعليمي</h2>
           <p class="section-subtext">وصول فوري لكافة الخدمات الطلابية، التقييمات، اللوائح، والمكتبة الإلكترونية المعتمدة</p>
         </div>
+
+        <section class="student-lookup fade-in-up" aria-labelledby="studentLookupTitle">
+          <div class="student-lookup-header">
+            <div class="student-lookup-title">
+              <span class="student-lookup-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+              <div>
+                <h3 id="studentLookupTitle">الاستعلام السريع عن الطالب</h3>
+                <p>اكتب رقم الجلوس فقط للاستعلام عن بيانات الطالب ودرجاته.</p>
+              </div>
+            </div>
+            <span class="student-lookup-badge"><i class="fa-solid fa-screwdriver-wrench"></i> الخدمة قيد التجهيز</span>
+          </div>
+
+          <form class="student-lookup-form" id="studentLookupForm">
+            <input
+              class="student-lookup-input"
+              id="studentSeatNumber"
+              name="seatNumber"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              maxlength="20"
+              pattern="[0-9٠-٩۰-۹]+"
+              placeholder="رقم الجلوس"
+              aria-label="رقم جلوس الطالب"
+              aria-describedby="studentLookupMessage"
+              required
+            >
+            <button class="student-lookup-submit" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              استعلام
+            </button>
+          </form>
+
+          <p class="student-lookup-message" id="studentLookupMessage" role="status" aria-live="polite">
+            واجهة الاستعلام قيد التجهيز، ولا توجد قاعدة بيانات مرتبطة لعرض نتائج فعلية حتى الآن.
+          </p>
+
+          <div class="student-lookup-preview" aria-label="البيانات التي ستظهر عند تفعيل الخدمة">
+            <div class="student-lookup-preview-item"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><span>اسم الطالب وحالة القيد</span></div>
+            <div class="student-lookup-preview-item"><i class="fa-solid fa-file-pen" aria-hidden="true"></i><span>امتحانات الشهر</span></div>
+            <div class="student-lookup-preview-item"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>التقييمات</span></div>
+            <div class="student-lookup-preview-item"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><span>المتابعة الدراسية</span></div>
+          </div>
+
+          <p class="student-lookup-privacy">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>حفاظًا على خصوصية الطلاب، لن تُعرض أو تُحفظ بيانات هنا. يلزم ربط مصدر رسمي وتأمين النتائج بتسجيل دخول قبل تفعيل الاستعلام.</span>
+          </p>
+        </section>
 
         <div class="filter-search-container fade-in-up">
           <div class="search-input-box">
@@ -2460,6 +2713,15 @@
 
     const savedTheme = localStorage.getItem('alsadat_theme') || 'light';
     applyTheme(savedTheme);
+
+    const studentLookupForm = document.getElementById('studentLookupForm');
+    const studentLookupMessage = document.getElementById('studentLookupMessage');
+
+    studentLookupForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      studentLookupMessage.textContent = 'الاستعلام غير متاح حاليًا؛ لم يتم إرسال رقم الجلوس أو حفظه. ستُفعّل النتائج بعد ربط قاعدة بيانات رسمية وتسجيل دخول آمن.';
+      studentLookupMessage.classList.add('is-notice');
+    });
 
     themeToggleBtn.addEventListener('click', () => {
       const currentTheme = htmlEl.getAttribute('data-theme');
