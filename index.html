@@ -598,6 +598,12 @@
       margin-bottom: 2.5rem;
     }
 
+    .hero-complaint-action {
+      display: flex;
+      flex: 0 0 100%;
+      justify-content: center;
+    }
+
     .btn-main {
       display: inline-flex;
       align-items: center;
@@ -648,6 +654,178 @@
     .btn-facebook-brand:hover {
       background: #0d65d9;
       transform: translateY(-3px);
+    }
+
+    .leadership-access-btn {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-width: 0;
+      padding: 8px;
+      border-radius: 16px;
+      text-align: center;
+      white-space: normal;
+    }
+
+    .leadership-access-feature {
+      width: min(100%, 280px);
+      margin: 18px auto 2.5rem;
+    }
+
+    .leadership-access-btn {
+      width: 100%;
+    }
+
+    .leadership-access-btn img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      border: 2px solid rgba(245, 207, 83, 0.9);
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .leadership-access-caption {
+      font-size: 0.76rem;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .leadership-portal[hidden] {
+      display: none;
+    }
+
+    .leadership-portal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      overflow-y: auto;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(37, 167, 119, 0.24), transparent 34%),
+        linear-gradient(145deg, #041a13, #0e4532 55%, #082d20);
+    }
+
+    .leadership-panel {
+      width: min(100%, 560px);
+      padding: clamp(24px, 5vw, 42px);
+      border: 1px solid rgba(245, 207, 83, 0.45);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      color: #141e19;
+      text-align: center;
+    }
+
+    .leadership-emblem {
+      display: grid;
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 16px;
+      place-items: center;
+      border: 3px solid var(--gold-light);
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--green-mid), var(--green-darkest));
+      color: #fff;
+      font-size: 2rem;
+      box-shadow: 0 8px 24px rgba(8, 45, 32, 0.25);
+    }
+
+    .leadership-panel h2 {
+      margin-bottom: 8px;
+      color: var(--green-dark);
+      font-size: clamp(1.35rem, 4vw, 1.8rem);
+      line-height: 1.5;
+    }
+
+    .leadership-panel > p,
+    .leadership-panel .leadership-description {
+      margin-bottom: 20px;
+      color: #53625b;
+    }
+
+    .leadership-login-form {
+      display: grid;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .leadership-login-form label {
+      font-weight: 800;
+    }
+
+    .leadership-login-form input {
+      width: 100%;
+      min-height: 50px;
+      padding: 10px 14px;
+      border: 1px solid #cbd6cf;
+      border-radius: 12px;
+      background: #fff;
+      color: #141e19;
+      font: inherit;
+      letter-spacing: 0.2em;
+      text-align: center;
+    }
+
+    .leadership-login-form input:focus {
+      outline: 3px solid rgba(30, 131, 94, 0.2);
+      border-color: var(--green-light);
+    }
+
+    .leadership-panel .btn-main {
+      justify-content: center;
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .leadership-notice {
+      min-height: 1.6em;
+      margin: 10px 0 0 !important;
+      color: #a12c2c !important;
+      font-weight: 700;
+    }
+
+    .leadership-security-note {
+      margin: 20px 0 0 !important;
+      padding-top: 14px;
+      border-top: 1px solid #e5ebe7;
+      font-size: 0.82rem;
+    }
+
+    .leadership-room-link {
+      display: block;
+      overflow-wrap: anywhere;
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #dfe9e3;
+      border-radius: 10px;
+      background: #f5f8f6;
+      color: var(--green-dark);
+      direction: ltr;
+      font-size: 0.9rem;
+      user-select: all;
+    }
+
+    .leadership-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      margin-top: 10px;
+      padding: 9px 16px;
+      border: 1px solid #cbd6cf;
+      border-radius: 999px;
+      color: var(--green-dark);
+      font-weight: 800;
+    }
+
+    .leadership-secondary-btn:hover {
+      background: #eef5f1;
     }
 
     .btn-ramadan-badge {
@@ -996,6 +1174,81 @@
 
     [data-theme="dark"] .student-lookup-message.is-notice {
       color: var(--gold-light);
+    }
+
+    .student-lookup-result[hidden] {
+      display: none;
+    }
+
+    .student-lookup-result {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      background: var(--bg-body);
+    }
+
+    .student-lookup-result-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .student-lookup-result-header h4,
+    .student-lookup-result h5 {
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    .student-lookup-result-header span {
+      color: var(--gold-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    [data-theme="dark"] .student-lookup-result-header span {
+      color: var(--gold-light);
+    }
+
+    .student-lookup-result-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 0 0 1rem;
+    }
+
+    .student-lookup-result-details div,
+    .student-lookup-grades li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+    }
+
+    .student-lookup-result-details dt,
+    .student-lookup-grades span {
+      color: var(--text-muted);
+    }
+
+    .student-lookup-result-details dd,
+    .student-lookup-grades strong {
+      margin: 0;
+      color: var(--text-main);
+      font-weight: 800;
+    }
+
+    .student-lookup-grades {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
     }
 
     .student-lookup-preview {
@@ -2087,10 +2340,12 @@
             <span>صفحة المدرسة الرسمية</span>
           </a>
 
-          <a href="https://forms.gle/NKTSYKrrZcdNCTHYA" target="_blank" class="btn-main btn-glass-outline">
-            <i class="fa-solid fa-comments"></i>
-            <span>تقديم شكوى أو مقترح</span>
-          </a>
+          <div class="hero-complaint-action">
+            <a href="https://forms.gle/NKTSYKrrZcdNCTHYA" target="_blank" class="btn-main btn-glass-outline">
+              <i class="fa-solid fa-comments"></i>
+              <span>تقديم شكوى أو مقترح</span>
+            </a>
+          </div>
         </div>
 
         <div class="fade-in-up">
@@ -2099,6 +2354,13 @@
             <span>تهنئة المناسبات والمسابقات الطلابية</span>
             <i class="fa-solid fa-arrow-left"></i>
           </a>
+        </div>
+
+        <div class="leadership-access-feature fade-in-up">
+          <button type="button" class="btn-main btn-glass-outline leadership-access-btn" id="openLeadershipPortal" aria-label="غرفة التواصل القيادي المباشر" title="غرفة التواصل القيادي المباشر">
+            <img src="leadership-communication-room.png" alt="غرفة التواصل القيادي المباشر بين مدير الإدارة التعليمية ومدير المدرسة">
+            <span class="leadership-access-caption">اضغط على الصورة للتواصل مع مدير المدرسة</span>
+          </button>
         </div>
 
         <div class="hero-stats-ribbon fade-in-up">
@@ -2141,7 +2403,7 @@
                 <p>اكتب رقم الجلوس فقط للاستعلام عن بيانات الطالب ودرجاته.</p>
               </div>
             </div>
-            <span class="student-lookup-badge"><i class="fa-solid fa-screwdriver-wrench"></i> الخدمة قيد التجهيز</span>
+            <span class="student-lookup-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> نموذج تجريبي فقط</span>
           </div>
 
           <form class="student-lookup-form" id="studentLookupForm">
@@ -2166,8 +2428,21 @@
           </form>
 
           <p class="student-lookup-message" id="studentLookupMessage" role="status" aria-live="polite">
-            واجهة الاستعلام قيد التجهيز، ولا توجد قاعدة بيانات مرتبطة لعرض نتائج فعلية حتى الآن.
+            جرّب رقم الجلوس 2222 لعرض سجل تجريبي. لا توجد قاعدة بيانات رسمية مرتبطة بهذا الموقع.
           </p>
+
+          <section class="student-lookup-result" id="studentLookupResult" aria-labelledby="studentLookupResultTitle" aria-live="polite" hidden>
+            <div class="student-lookup-result-header">
+              <h4 id="studentLookupResultTitle">نتيجة تجريبية غير رسمية</h4>
+              <span>بيانات افتراضية — لا تمثل درجات حقيقية</span>
+            </div>
+            <dl class="student-lookup-result-details">
+              <div><dt>اسم الطالب</dt><dd id="studentLookupName"></dd></div>
+              <div><dt>رقم الجلوس</dt><dd id="studentLookupSeatNumber"></dd></div>
+            </dl>
+            <h5>درجات تجريبية</h5>
+            <ul class="student-lookup-grades" id="studentLookupGrades"></ul>
+          </section>
 
           <div class="student-lookup-preview" aria-label="البيانات التي ستظهر عند تفعيل الخدمة">
             <div class="student-lookup-preview-item"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><span>اسم الطالب وحالة القيد</span></div>
@@ -2178,7 +2453,7 @@
 
           <p class="student-lookup-privacy">
             <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-            <span>حفاظًا على خصوصية الطلاب، لن تُعرض أو تُحفظ بيانات هنا. يلزم ربط مصدر رسمي وتأمين النتائج بتسجيل دخول قبل تفعيل الاستعلام.</span>
+            <span>هذا مثال تجريبي محلي لرقم 2222 فقط؛ لا تُرسل أرقام البحث ولا تُحفظ، والدرجات المعروضة افتراضية وليست سجلًا رسميًا.</span>
           </p>
         </section>
 
@@ -2683,7 +2958,118 @@
     </div>
   </div>
 
+  <section class="leadership-portal" id="leadershipPortal" aria-label="بوابة التواصل القيادي" hidden>
+    <div class="leadership-panel">
+      <div class="leadership-view" id="leadershipLoginView">
+        <div class="leadership-emblem" aria-hidden="true"><i class="fa-solid fa-user-shield"></i></div>
+        <h2>دخول غرفة التواصل القيادي</h2>
+        <p>أدخل كلمة المرور للمتابعة إلى خدمات التواصل المباشر.</p>
+        <form class="leadership-login-form" id="leadershipLoginForm">
+          <label for="leadershipPassword">كلمة المرور</label>
+          <input id="leadershipPassword" name="password" type="password" inputmode="numeric" autocomplete="current-password" required aria-describedby="leadershipLoginMessage">
+          <button type="submit" class="btn-main btn-gold-solid">
+            <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+            <span>تسجيل الدخول</span>
+          </button>
+        </form>
+        <p class="leadership-notice" id="leadershipLoginMessage" role="status" aria-live="polite"></p>
+        <p class="leadership-security-note">ملاحظة: هذه البوابة واجهة تجريبية داخل الموقع، وكلمة المرور المضمنة في صفحة ثابتة لا توفر حماية حقيقية. يلزم خادم وتسجيل دخول آمن لحماية الوصول.</p>
+        <button type="button" class="leadership-secondary-btn" id="closeLeadershipPortal">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          العودة إلى الموقع
+        </button>
+      </div>
+
+      <div class="leadership-view" id="leadershipRoomView" hidden>
+        <div class="leadership-emblem" aria-hidden="true"><i class="fa-solid fa-video"></i></div>
+        <h2>غرفة التواصل القيادي المباشر</h2>
+        <p class="leadership-description">ابدأ اجتماع الفيديو، وافتح رابط الغرفة نفسه على جهاز المدرسة للانضمام إلى المكالمة.</p>
+        <a class="btn-main btn-gold-solid" id="startLeadershipCall" href="https://meet.jit.si/alsadat-school-leadership-communication-room-2026" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-video" aria-hidden="true"></i>
+          <span>غرفة التواصل القيادي المباشر</span>
+        </a>
+        <p class="leadership-room-link" id="leadershipRoomUrl">https://meet.jit.si/alsadat-school-leadership-communication-room-2026</p>
+        <p>تأكد من السماح باستخدام الكاميرا والميكروفون، وشارك رابط الغرفة مع المدرسة للانضمام.</p>
+        <p class="leadership-notice" id="leadershipRoomMessage" role="status" aria-live="polite"></p>
+        <button type="button" class="leadership-secondary-btn" id="copyLeadershipRoomLink">
+          <i class="fa-regular fa-copy" aria-hidden="true"></i>
+          نسخ رابط الغرفة
+        </button>
+        <button type="button" class="leadership-secondary-btn" id="logoutLeadershipPortal">
+          <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+          تسجيل الخروج
+        </button>
+      </div>
+    </div>
+  </section>
+
   <script>
+    const leadershipPortal = document.getElementById('leadershipPortal');
+    const leadershipLoginView = document.getElementById('leadershipLoginView');
+    const leadershipRoomView = document.getElementById('leadershipRoomView');
+    const leadershipLoginForm = document.getElementById('leadershipLoginForm');
+    const leadershipPassword = document.getElementById('leadershipPassword');
+    const leadershipLoginMessage = document.getElementById('leadershipLoginMessage');
+    const leadershipRoomMessage = document.getElementById('leadershipRoomMessage');
+    const leadershipRoomUrl = document.getElementById('startLeadershipCall').href;
+
+    function openLeadershipPortal() {
+      leadershipLoginView.hidden = false;
+      leadershipRoomView.hidden = true;
+      leadershipPassword.value = '';
+      leadershipLoginMessage.textContent = '';
+      leadershipRoomMessage.textContent = '';
+      leadershipPortal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      leadershipPassword.focus();
+    }
+
+    function closeLeadershipPortal() {
+      leadershipPortal.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('openLeadershipPortal').addEventListener('click', openLeadershipPortal);
+    document.getElementById('closeLeadershipPortal').addEventListener('click', closeLeadershipPortal);
+    document.getElementById('logoutLeadershipPortal').addEventListener('click', closeLeadershipPortal);
+
+    leadershipLoginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const password = leadershipPassword.value.replace(/[٠-٩۰-۹]/g, (digit) => {
+        const code = digit.charCodeAt(0);
+        return String.fromCharCode(code >= 0x6f0 ? code - 0x6f0 + 0x30 : code - 0x660 + 0x30);
+      });
+
+      if (password !== 'AAaa#####@@$elsadat') {
+        leadershipLoginMessage.textContent = 'كلمة المرور غير صحيحة. حاول مرة أخرى.';
+        leadershipPassword.focus();
+        leadershipPassword.select();
+        return;
+      }
+
+      leadershipLoginMessage.textContent = '';
+      leadershipLoginView.hidden = true;
+      leadershipRoomView.hidden = false;
+      document.getElementById('startLeadershipCall').focus();
+    });
+
+    document.getElementById('copyLeadershipRoomLink').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(leadershipRoomUrl);
+        leadershipRoomMessage.textContent = 'تم نسخ رابط الغرفة. أرسله إلى المدرسة للانضمام.';
+        leadershipRoomMessage.style.color = '#166448';
+      } catch (error) {
+        leadershipRoomMessage.textContent = 'تعذر نسخ الرابط تلقائيًا. يمكنك تحديد الرابط الظاهر ونسخه يدويًا.';
+        leadershipRoomMessage.style.color = '#a12c2c';
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !leadershipPortal.hidden) {
+        closeLeadershipPortal();
+      }
+    });
+
     (function initDate() {
       const dateEl = document.getElementById('currentDateDisplay');
       if (!dateEl) return;
@@ -2716,10 +3102,49 @@
 
     const studentLookupForm = document.getElementById('studentLookupForm');
     const studentLookupMessage = document.getElementById('studentLookupMessage');
+    const studentSeatNumberInput = document.getElementById('studentSeatNumber');
+    const studentLookupResult = document.getElementById('studentLookupResult');
+    const studentLookupName = document.getElementById('studentLookupName');
+    const studentLookupSeatNumber = document.getElementById('studentLookupSeatNumber');
+    const studentLookupGrades = document.getElementById('studentLookupGrades');
+    const demoStudent = {
+      seatNumber: '2222',
+      name: 'محمود متولي محمود',
+      grades: [
+        { subject: 'اللغة العربية', score: '18 من 20' },
+        { subject: 'اللغة الإنجليزية', score: '17 من 20' },
+        { subject: 'الرياضيات', score: '19 من 20' }
+      ]
+    };
 
     studentLookupForm.addEventListener('submit', (event) => {
       event.preventDefault();
-      studentLookupMessage.textContent = 'الاستعلام غير متاح حاليًا؛ لم يتم إرسال رقم الجلوس أو حفظه. ستُفعّل النتائج بعد ربط قاعدة بيانات رسمية وتسجيل دخول آمن.';
+      const seatNumber = studentSeatNumberInput.value.replace(/[٠-٩۰-۹]/g, (digit) => {
+        const code = digit.charCodeAt(0);
+        return String.fromCharCode(code >= 0x6f0 ? code - 0x6f0 + 0x30 : code - 0x660 + 0x30);
+      });
+
+      studentLookupResult.hidden = true;
+      if (seatNumber !== demoStudent.seatNumber) {
+        studentLookupMessage.textContent = 'لا توجد نتيجة تجريبية لهذا الرقم. لم يتم إرسال الرقم أو حفظه.';
+        studentLookupMessage.classList.add('is-notice');
+        return;
+      }
+
+      studentLookupName.textContent = demoStudent.name;
+      studentLookupSeatNumber.textContent = demoStudent.seatNumber;
+      studentLookupGrades.replaceChildren();
+      demoStudent.grades.forEach(({ subject, score }) => {
+        const gradeItem = document.createElement('li');
+        const subjectName = document.createElement('span');
+        const gradeScore = document.createElement('strong');
+        subjectName.textContent = subject;
+        gradeScore.textContent = score;
+        gradeItem.append(subjectName, gradeScore);
+        studentLookupGrades.append(gradeItem);
+      });
+      studentLookupResult.hidden = false;
+      studentLookupMessage.textContent = 'تم العثور على نموذج تجريبي فقط؛ الدرجات المعروضة افتراضية وليست رسمية.';
       studentLookupMessage.classList.add('is-notice');
     });
 
